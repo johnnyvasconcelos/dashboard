@@ -79,6 +79,30 @@ aside > header {
   display: flex;
   gap: 20px;
   align-items: center;
+  position: relative;
+}
+
+aside .menu-btn {
+  background: var(--color-3);
+  position: absolute;
+  right: 30px;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  justify-content: center;
+}
+
+aside .menu-btn:hover {
+  background-color: var(--color-1);
+}
+
+aside .menu-btn img {
+  width: 25px;
+  height: 25px;
 }
 
 aside span {
@@ -102,6 +126,15 @@ aside .menu {
   height: auto;
 }
 
+aside .menu a {
+  position: relative;
+}
+
+aside .menu .icon {
+  position: absolute;
+  right: 30px;
+}
+
 aside .active,
 aside li a:hover {
   background-image: linear-gradient(to right, var(--color-1), var(--color-3));
@@ -116,11 +149,208 @@ aside li span {
   width: 50px;
 }
 
+.submenu {
+  margin: 20px 0 20px 40px;
+  border-left: 2px solid #7c7481;
+}
+
 main {
   width: 80%;
 }
 
-.submenu {
-  margin: 20px 0 20px 40px;
-  border-left: 2px solid #7c7481;
+main > header {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main > header > div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+
+main > header > div > p {
+  background-color: #230f37;
+  border-radius: 50px;
+  border: 1px solid #ba92cb;
+  color: #efe2ed;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0 15px;
+  height: 45px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  background-color: #10082c;
+  width: 250px;
+  border-radius: 50px;
+  border: 1px solid #ba92cb;
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow: hidden;
+}
+
+.search input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  width: 180px;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.search input::placeholder {
+  font-size: 18px;
+}
+
+.user {
+  display: flex;
+  aling-items: center;
+  gap: 15px;
+}
+
+.user span {
+  color: #e4d1b5;
+  font-weight: 600;
+  gap: 5px;
+  display: flex;
+}
+
+.user > div {
+  cursor: pointer;
+}
+
+.user p {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: -5px;
+}
+
+.user span img {
+  width: 12px;
+}
+
+.user > img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+}
+
+.main {
+  background-image: linear-gradient(to right, #080724, #180c2c);
+  width: 95%;
+  border-radius: 25px;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.main header {
+  position: relative;
+  height: 250px;
+  width: 40%;
+  border-radius: 25px;
+  overflow: hidden;
+  background-image: url("../images/eenu.jpg");
+  background-size: cover;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.main header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  width: 100%;
+  padding: 0 20px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.main .header {
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main header .edit-icon {
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 20;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35px;
+}
+
+.main header:hover h1 {
+  opacity: 0;
+}
+
+.main header:hover .edit-icon {
+  opacity: 1;
+}
+
+.main header::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(75, 34, 138, 75%);
+}
+.main .icones {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.main .info {
+  width: 60%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+}
+.main .icones {
+  margin-top: 40px;
+}
+.main .icones .icone {
+  text-align: center;
+}
+.main .icones .icone img {
+  width: 40px;
+}
+.main .icones .icone span {
+  display: block;
+  margin-top: 10px;
+  color: #d4c97c;
+  font-weight: 700;
+  font-size: 26px;
+}
+.main .icones .icone p {
+  font-size: 18px;
 }
