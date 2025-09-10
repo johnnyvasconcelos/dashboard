@@ -7,6 +7,7 @@
     <title>Modelo Dashboard EENU</title>
     <link rel="stylesheet" href="./assets/style/style.css" />
     <script src="./assets/scripts/script.js" defer></script>
+    <script src="./assets/scripts/index.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
@@ -94,7 +95,7 @@
   </table>
             <footer>
               <div class="btns">
-                <a href="#" class="btn">ver mais</a>
+                <div class="btn ver-mais">ver mais</div>
                 <a href="#" class="btn"
                   >cadastrar empresa
                   <img src="./assets/images/plus.svg" alt="plus"

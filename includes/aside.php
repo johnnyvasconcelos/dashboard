@@ -6,6 +6,7 @@
               <img src="./assets/images/menu.svg" alt="menu" />
             </div>
           </header>
+          <div class="aside-container">
           <h3>visão geral</h3>
           <ul>
             <li class="active">
@@ -81,4 +82,5 @@
               </ul>
             </li>
           </ul>
+          </div>
         </aside>
