@@ -1,14 +1,14 @@
 <header>
     <form action="" class="search" id="search">
-        <img src="./assets/images/search.svg" alt="search" />
+        <img :src="darkMode ? './assets/images/search.svg' : './assets/images/search-dark.svg'" alt="search" />
         <input type="search" placeholder="Pesquise..." />
     </form>
     <div>
         <p class="moon-div">
-        <img src="./assets/images/moon.svg" alt="moon" class="moon" @click="darkMode = !darkMode">
+        <img :src="darkMode ? './assets/images/moon.svg' : './assets/images/moon-dark.svg'" alt="moon" class="moon" @click="darkMode = !darkMode">
 </p>
         <p>
-        <img src="./assets/images/cloud.svg" alt="nimbus" />
+        <img :src="darkMode ? './assets/images/cloud.svg' : './assets/images/cloud-dark.svg'" alt="nimbus" />
         <span>16°</span>
         </p>
         <div class="user">

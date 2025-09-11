@@ -47,7 +47,7 @@ body {
 }
 
 .wrapper {
-  background-color: #fefefe;
+  background-color: #eeeeee;
 }
 
 .wrapper.dark {
@@ -61,15 +61,21 @@ body {
 
 .main-container {
   display: flex;
-  align-items: stretch; /* força o aside acompanhar o main */
+  align-items: stretch;
 }
 
 aside {
-  background-color: #020720;
+  background-color: #fff;
   width: 20%;
   transition: 0.3s;
   min-height: 100vh;
   position: relative;
+  border-right: 1px solid #cecece;
+}
+
+.dark aside {
+  background-color: #020720;
+  border-right: 1px solid #cecece00;
 }
 
 .aside-container {
@@ -83,10 +89,13 @@ main {
 }
 
 main > header {
+  background-color: #ffffff;
   border-bottom: 1px solid #cecece;
+  margin-bottom: 40px;
 }
 
 .dark main > header {
+  background-color: transparent;
   border-bottom: 1px solid #cecece00;
 }
 
@@ -212,12 +221,21 @@ aside .menu .icon {
 
 aside .active,
 aside li a:hover {
-  background-image: linear-gradient(to right, var(--color-1), var(--color-3));
+  background: linear-gradient(to left, #ead3e4, #dacdd6);
+}
+
+.dark aside .active,
+.dark aside li a:hover {
+  background: linear-gradient(to right, var(--color-1), var(--color-3));
 }
 
 aside li span {
-  color: white;
+  color: var(--color-3);
   font-size: 16px;
+}
+
+.dark aside li span {
+  color: white;
 }
 
 .logo {
@@ -226,8 +244,12 @@ aside li span {
 
 .submenu {
   margin: 20px 0 20px 40px;
-  border-left: 2px solid #7c7481;
+  border-left: 2px solid #e6e6e6;
   transition: 0.3s;
+}
+
+.dark .submenu {
+  border-left: 2px solid #7c7481;
 }
 
 .show-menu .submenu {
@@ -239,19 +261,6 @@ aside li span {
   display: none;
 }
 
-/* ❌ REMOVER/COMENTAR estas linhas antigas: */
-/*
-.item-visible {
-  height: 0px;
-}
-
-.show-menu .submenu-none .visible {
-  height: auto !important;
-  display: block !important;
-}
-*/
-
-/* ✅ ADICIONAR estas regras novas: */
 .item-visible {
   height: 0px;
   opacity: 0;
@@ -260,7 +269,6 @@ aside li span {
   cursor: pointer;
 }
 
-/* Quando menu está colapsado (show-menu = true), item-visible deve aparecer */
 .show-menu .item-visible {
   height: 60px !important;
   opacity: 1 !important;
@@ -269,12 +277,10 @@ aside li span {
   border-bottom: 1px solid #31255141;
 }
 
-/* Esconder texto quando menu está colapsado, mostrar só ícone */
 .show-menu .item-visible span {
   opacity: 0;
 }
 
-/* Efeito hover para item-visible */
 .show-menu .item-visible:hover {
   background-image: linear-gradient(to right, var(--color-1), var(--color-3));
 }
@@ -322,10 +328,10 @@ main > header > div {
 }
 
 main > header > div > p {
-  background-color: #230f37;
+  background-color: #f1ebf4;
+  border: 1px solid #efefef;
+  color: var(--color-2);
   border-radius: 50px;
-  border: 1px solid #ba92cb;
-  color: #efe2ed;
   font-weight: 700;
   font-size: 16px;
   padding: 0 15px;
@@ -335,11 +341,17 @@ main > header > div > p {
   align-items: center;
 }
 
+.dark main > header > div > p {
+  background-color: #230f37;
+  border: 1px solid #ba92cb;
+  color: #efe2ed;
+}
+
 .search {
-  background-color: #10082c;
+  background-color: #f1ebf4;
+  border: 1px solid #efefef;
   width: 280px;
   border-radius: 50px;
-  border: 1px solid #ba92cb;
   height: 50px;
   padding: 0 20px;
   display: flex;
@@ -347,6 +359,11 @@ main > header > div > p {
   gap: 15px;
   overflow: hidden;
   transition: 0.4s;
+}
+
+.dark .search {
+  background-color: #10082c;
+  border: 1px solid #ba92cb;
 }
 
 .main-active .search {
@@ -376,10 +393,14 @@ main > header > div > p {
 }
 
 .user span {
-  color: #e4d1b5;
+  color: #c9a448;
   font-weight: 600;
   gap: 5px;
   display: flex;
+}
+
+.dark .user span {
+  color: #e4d1b5;
 }
 
 .user > div {
@@ -387,10 +408,14 @@ main > header > div > p {
 }
 
 .user p {
-  color: white;
+  color: var(--color-3);
   font-size: 18px;
   font-weight: 600;
   margin-bottom: -5px;
+}
+
+.dark .user p {
+  color: white;
 }
 
 .user span img {
@@ -405,12 +430,18 @@ main > header > div > p {
 }
 
 .main {
-  background-image: linear-gradient(to right, #080724, #180c2c);
+  background: #ffffff;
   width: 95%;
   border-radius: 10px;
   gap: 20px;
   margin: 0 auto;
   overflow: hidden;
+  border: 1px solid #cecece;
+}
+
+.dark .main {
+  background: linear-gradient(to right, #080724, #180c2c);
+  border: 1px solid #cecece00;
 }
 
 .main header {
@@ -529,11 +560,14 @@ table tr {
   justify-content: space-between;
   padding: 20px 70px;
   cursor: pointer;
-  border-bottom: 1px solid #29145377;
+  border-bottom: 1px solid #e9dcdf;
   transition: max-height 360ms ease, opacity 260ms ease, padding 260ms ease;
   max-height: 120px;
   overflow: hidden;
   opacity: 1;
+}
+.dark table tr {
+  border-bottom: 1px solid #29145377;
 }
 table tr.collapsed {
   max-height: 0;
@@ -545,11 +579,14 @@ table tr.collapsed {
 }
 table tr td {
   font-size: 16px;
-  color: white;
+  color: var(--color-2);
   display: flex;
   align-items: center;
   gap: 10px;
   min-width: 200px;
+}
+.dark tr td {
+  color: white;
 }
 table tr th {
   font-size: 18px;
@@ -573,16 +610,29 @@ table tr th:nth-of-type(5) {
 }
 
 table tbody tr.par {
-  background: linear-gradient(to right, #100c34, #221037);
+  background: #f1ebf4;
 }
 
 table tbody tr.impar {
+  background: #f7f1f7;
+}
+
+.dark table tbody tr.par {
+  background: linear-gradient(to right, #100c34, #221037);
+}
+
+.dark table tbody tr.impar {
   background: linear-gradient(to right, #0d092b, #1b0d30);
 }
 
 table tr.par:hover,
 table tr.impar:hover {
-  background: #8e52af !important;
+  background: #f1ebf4;
+}
+
+.dark table tr.par:hover,
+.dark table tr.impar:hover {
+  background: #8e52af;
 }
 
 table tr.par:hover td,
