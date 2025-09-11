@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modelo Dashboard EENU</title>
     <link rel="stylesheet" href="./assets/style/style.css" />
+        <link rel="stylesheet" href="./assets/style/transitions.css" />
+    <script src="./assets/scripts/vue.min.js"></script>
     <script src="./assets/scripts/script.js" defer></script>
-    <script src="./assets/scripts/index.js" defer></script>
   </head>
   <body>
-    <div class="wrapper">
+        <div id="app">
+    <div class="wrapper" :class="{ 'dark': darkMode }">
       <div class="main-container">
         <?php require 'includes/aside.php'; ?>
         <main>
@@ -80,7 +82,10 @@
             $linha++;
             $classe = ($linha % 2 == 0) ? "par" : "impar";
 
-            echo "<tr class='$classe'>";
+            // Adiciona v-show para controlar a visibilidade
+            $vShow = ($linha <= 4) ? "" : "v-show=\"expanded\"";
+
+            echo "<tr class='$classe' $vShow>";
             echo "<td>" . date('d/m', strtotime($row['data'])) . "</td>";
             echo "<td>" . htmlspecialchars($row['empresa_nome']) . "</td>";
             echo "<td>" . htmlspecialchars($row['responsavel']) . "</td>";
@@ -95,7 +100,7 @@
   </table>
             <footer>
               <div class="btns">
-                <div class="btn ver-mais">ver mais</div>
+                <div class="btn ver-mais" @click="toggleExpanded">{{ expanded ? "ver menos" : "ver mais" }}</div>
                 <a href="./cadastrar-empresa.php" class="btn"
                   >cadastrar empresa
                   <img src="./assets/images/plus.svg" alt="plus"
@@ -106,5 +111,6 @@
         </main>
       </div>
     </div>
+  </div>
   </body>
 </html>

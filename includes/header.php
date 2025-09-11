@@ -4,6 +4,9 @@
         <input type="search" placeholder="Pesquise..." />
     </form>
     <div>
+        <p class="moon-div">
+        <img src="./assets/images/moon.svg" alt="moon" class="moon" @click="darkMode = !darkMode">
+</p>
         <p>
         <img src="./assets/images/cloud.svg" alt="nimbus" />
         <span>16°</span>
