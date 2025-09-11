@@ -195,7 +195,7 @@ aside li a:hover {
 
 aside li span {
   color: white;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .logo {
@@ -211,6 +211,19 @@ aside li span {
 .show-menu .submenu {
   margin: 0px;
   border-left: 0px solid transparent;
+}
+
+.submenu-none li {
+  display: none;
+}
+
+.item-visible {
+  height: 0px;
+}
+
+.show-menu .submenu-none .visible {
+  height: auto !important;
+  display: block !important;
 }
 
 .show-menu .none {
@@ -327,7 +340,7 @@ main > header > div > p {
 .main {
   background-image: linear-gradient(to right, #080724, #180c2c);
   width: 95%;
-  border-radius: 25px;
+  border-radius: 10px;
   gap: 20px;
   margin: 0 auto;
   overflow: hidden;
@@ -335,7 +348,7 @@ main > header > div > p {
 
 .main header {
   position: relative;
-  width: 40%;
+  width: 30%;
   border-right: 2px solid #ffffff54;
   color: white;
   overflow: hidden;
@@ -344,7 +357,7 @@ main > header > div > p {
   justify-content: center;
   flex-direction: column;
   margin-right: 30px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .main header img {
@@ -404,7 +417,7 @@ main > header > div > p {
   align-items: flex-end;
 }
 .main .info {
-  width: 60%;
+  width: 70%;
   color: white;
   display: flex;
   flex-direction: column;
@@ -422,7 +435,7 @@ main > header > div > p {
   border-radius: 20px;
 }
 .main .icones .icone:hover {
-  background-color: #08051f67;
+  background-color: #8e52af53;
 }
 .main .icones .icone:hover img {
   transform: translateY(-5px);
@@ -436,7 +449,7 @@ main > header > div > p {
   margin-top: 10px;
   color: #d4c97c;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 20px;
 }
 .main .icones .icone p {
   font-size: 18px;
@@ -448,10 +461,23 @@ table tr {
   display: flex;
   justify-content: space-between;
   padding: 20px 70px;
+  cursor: pointer;
   border-bottom: 1px solid #29145377;
+  transition: max-height 360ms ease, opacity 260ms ease, padding 260ms ease;
+  max-height: 120px;
+  overflow: hidden;
+  opacity: 1;
+}
+table tr.collapsed {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 table tr td {
-  font-size: 20px;
+  font-size: 16px;
   color: white;
   display: flex;
   align-items: center;
@@ -487,6 +513,17 @@ table tbody tr.impar {
   background: linear-gradient(to right, #0d092b, #1b0d30);
 }
 
+table tr.par:hover,
+table tr.impar:hover {
+  background: #8e52af !important;
+}
+
+table tr.par:hover td,
+table tr.impar:hover td {
+  color: #1b0d30;
+  font-weight: 700;
+}
+
 table tr td img {
   width: 40px;
   border: 2px solid white;
@@ -509,9 +546,9 @@ table th:nth-of-type(4) {
   background-color: var(--color-3);
   border-radius: 15px;
   padding: 15px 25px;
-  font-size: 20px;
+  font-size: 16px;
   color: white;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   transition: 0.2s;
   display: flex;

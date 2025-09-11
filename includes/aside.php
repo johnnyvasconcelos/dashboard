@@ -42,6 +42,13 @@
                     >
                   </a>
                 </li>
+                <li class="item-visible">
+                  <a href="./cadastrar-empresa.html">
+                    <img src="./assets/images/globe.svg" alt="home svg" /><span
+                      >Proprietários</span
+                    >
+                  </a>
+                </li>
               </ul>
             </li>
 
@@ -76,6 +83,13 @@
                   <a href="./personalizar-painel.html">
                     <img src="./assets/images/edit.svg" alt="home svg" /><span
                       >Personalizar Painel</span
+                    >
+                  </a>
+                </li>
+                <li class="item-visible">
+                  <a href="./cadastrar-empresa.html">
+                    <img src="./assets/images/cog.svg" alt="home svg" /><span
+                      >Configurações</span
                     >
                   </a>
                 </li>

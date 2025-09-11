@@ -19,7 +19,7 @@
             <div class="header">
               <header>
                 <img
-                  src="./assets/images/globe.svg"
+                  src="./assets/images/globe-color.svg"
                   alt="globe"
                   class="globe"
                 />
@@ -96,7 +96,7 @@
             <footer>
               <div class="btns">
                 <div class="btn ver-mais">ver mais</div>
-                <a href="#" class="btn"
+                <a href="./cadastrar-empresa.php" class="btn"
                   >cadastrar empresa
                   <img src="./assets/images/plus.svg" alt="plus"
                 /></a>
