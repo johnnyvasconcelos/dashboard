@@ -18,6 +18,10 @@
         <main>
           <?php require 'includes/header.php'; ?>
           <div class="main">
+                          <div class="title">
+                <h1>Início</h1>
+                <p>Informações gerais da sua empresa!</p>
+              </div>
             <div class="header">
               <header>
                 <img

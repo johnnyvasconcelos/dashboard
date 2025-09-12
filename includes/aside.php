@@ -11,7 +11,7 @@
     <ul>
       <li class="active">
         <a href="./index.html">
-          <img :src="darkMode ? './assets/images/home.svg' : './assets/images/home-dark.svg'" alt="home svg" />
+          <img src="./assets/images/home.svg" alt="home svg" />
           <span>Início</span>
         </a>
       </li>
