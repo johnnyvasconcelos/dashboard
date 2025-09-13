@@ -1,10 +1,13 @@
-       <aside :class="{ 'show-menu': showMenu }">
+       <aside :class="{ 'show-menu': showMenu, 'show-menu-2': showMenu2 }">
   <header>
     <img :src="darkMode ? './assets/images/logo.png' : './assets/images/logo-normal.png'" alt="logo" class="logo" />
     <span>EENU</span>
     <div class="menu-btn" @click="toggleMenu">
       <img src="./assets/images/menu.svg" alt="menu" />
     </div>
+    <span class="bt-mobl" @click="toggleMenuMobile">
+            <img :src="darkMode ? './assets/images/menu.svg' : './assets/images/menu-dark.svg'" alt="menu" />
+        </span>
   </header>
   <div class="aside-container">
     <h3>visão geral</h3>

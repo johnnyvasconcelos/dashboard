@@ -2,8 +2,10 @@ new Vue({
   el: "#app",
   data: {
     showMenu: false,
+    showMenu2: false,
     expanded: false,
     darkMode: false,
+    is976: window.innerWidth <= 976,
     menuMainOpen: true,
     submenu: {
       owners: false,
@@ -36,6 +38,9 @@ new Vue({
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu;
+    },
+    toggleMenuMobile() {
+      this.showMenu2 = !this.showMenu2;
     },
     toggleSubmenu(key) {
       this.submenu[key] = !this.submenu[key];

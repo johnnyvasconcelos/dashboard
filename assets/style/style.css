@@ -73,9 +73,19 @@ aside {
   background-color: #fff;
   width: 22%;
   transition: 0.3s;
-  min-height: 100vh;
   position: relative;
   border-right: 1px solid #cecece;
+  min-height: 100vh;
+}
+
+.aside-container {
+  position: sticky;
+  top: 0;
+}
+
+aside .aside-container > ul {
+  z-index: 10;
+  padding-bottom: 20px;
 }
 
 .dark aside {
@@ -83,14 +93,9 @@ aside {
   border-right: 1px solid #cecece00;
 }
 
-.aside-container {
-  position: sticky;
-  left: 0;
-  top: 0;
-}
-
 main {
   flex: 1;
+  min-height: 100vh;
 }
 
 main > header {
@@ -114,6 +119,8 @@ aside h3 {
 }
 
 aside > header {
+  flex-shrink: 0; /* Não encolhe */
+  /* Resto das propriedades mantém igual */
   padding: 40px;
   display: flex;
   gap: 20px;
@@ -682,12 +689,16 @@ table tr th {
   color: #734a9c;
 }
 
+.p-site b {
+  display: block;
+}
+
 table tbody tr.par {
   background: #f1ebf4;
 }
 
 table tbody tr.impar {
-  background: #f7f1f7;
+  background: #ffffff;
 }
 
 .dark table tbody tr.par {
@@ -729,12 +740,11 @@ table th:nth-of-type(4) {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 20px;
+  gap: 15px;
 }
 .btn {
   border: 3px solid white;
   background-color: var(--color-3);
-  border-radius: 15px;
   padding: 12px 20px;
   font-size: 16px;
   color: white;
@@ -757,6 +767,30 @@ table th:nth-of-type(4) {
 
 .show-menu .menu-btn {
   right: -80px;
+}
+
+.show-menu-2 {
+  min-width: 250px;
+  z-index: 100;
+}
+
+.show-menu-2 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+}
+
+.show-menu-2 ul li a {
+  width: 100%;
+}
+
+.show-menu-2 ul li a span {
+  opacity: 1;
+}
+
+.show-menu-2 .submenu {
+  width: 100%;
 }
 
 .show-menu > header {
@@ -902,6 +936,9 @@ aside.show-menu li span {
 @media (max-width: 1231px) {
   main > header {
     position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
   }
   aside .menu-btn {
     right: -80px;
@@ -923,6 +960,16 @@ aside.show-menu li span {
   aside header span,
   .menu-btn {
     display: none !important;
+  }
+  .show-menu-2 header span {
+    display: block !important;
+  }
+  .show-menu-2 > header {
+    gap: 0px;
+    justify-content: flex-start;
+  }
+  .show-menu-2 > header .logo {
+    margin: 0 10px;
   }
   aside li {
     display: flex;
@@ -967,11 +1014,40 @@ aside.show-menu li span {
     align-items: center;
     width: 50px;
     height: 50px;
+    cursor: pointer;
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     top: 20px;
     left: 20px;
     border-radius: 50%;
+  }
+  aside .bt-mobl {
+    opacity: 0;
+    z-index: -1;
+  }
+  .dark .show-menu-2::before {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #02072070;
+  }
+  .show-menu-2 .bt-mobl {
+    opacity: 1;
+    z-index: 1000;
+    position: relative;
+    top: 0px;
+  }
+  .show-menu-2 .bt-mobl img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .dark .bt-mobl:hover {
+    background-color: var(--gray);
   }
   .search {
     margin-left: 50px;

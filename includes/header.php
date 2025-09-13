@@ -11,7 +11,7 @@
         <img :src="darkMode ? './assets/images/cloud.svg' : './assets/images/cloud-dark.svg'" alt="nimbus" />
         <span>16°</span>
         </p>
-        <span class="bt-mobl" @click="toggleMenu">
+        <span class="bt-mobl" @click="toggleMenuMobile">
             <img :src="darkMode ? './assets/images/menu.svg' : './assets/images/menu-dark.svg'" alt="menu" />
         </span>
         <div class="user">
