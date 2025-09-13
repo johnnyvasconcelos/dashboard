@@ -1,5 +1,6 @@
-       <aside :class="{ 'show-menu': showMenu, 'show-menu-2': showMenu2 }">
-  <header>
+ <aside :class="{ 'show-menu': showMenu, 'show-menu-2': showMenu2 }">
+ <div class="menu-background" @click="toggleMenuMobile"></div> 
+ <header>
     <img :src="darkMode ? './assets/images/logo.png' : './assets/images/logo-normal.png'" alt="logo" class="logo" />
     <span>EENU</span>
     <div class="menu-btn" @click="toggleMenu">

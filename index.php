@@ -40,7 +40,7 @@
               <div class="info">
                 <h2>Empresas Cadastradas</h2>
                 <div class="icones">
-                  <div class="icone" :style="showMenu2 && !is976 ? 'display: flex; flex-direction: column; height: auto;' : 'display: flex; '">
+                  <div class="icone">
                     <div class="img">
                     <img :src="darkMode ? './assets/images/wallet-purple.svg' : './assets/images/wallet-dark.svg'" alt="wallet" />
                     </div>
@@ -50,7 +50,7 @@
                       <p>Ativas no sistema</p>
                     </div>
                   </div>
-                  <div class="icone" :style="showMenu2 && !is976 ? 'display: flex; flex-direction: column; height: auto;' : 'display: flex; '">
+                  <div class="icone">
                     <div class="img">
                     <img :src="darkMode ? './assets/images/users-purple.svg' : './assets/images/users-dark.svg'" alt="wallet" />
                     </div>
@@ -60,7 +60,7 @@
                       <p>Último login: 10/10</p>
                     </div>
                   </div>
-                  <div class="icone" :style="showMenu2 && !is976 ? 'display: flex; flex-direction: column; height: auto;' : 'display: flex; '">
+                  <div class="icone">
                     <div class="img">
                     <img :src="darkMode ? './assets/images/chart-purple.svg' : './assets/images/chart-dark.svg'" alt="wallet" />
                     </div>
@@ -70,7 +70,7 @@
                       <p>50% de ocupação</p>
                     </div>
                   </div>
-                  <div class="icone" :style="showMenu2 && !is976 ? 'display: flex; flex-direction: column; height: auto;' : 'display: flex; '">
+                  <div class="icone">
                     <div class="img">
                     <img :src="darkMode ? './assets/images/star-purple.svg' : './assets/images/star-dark.svg'" alt="wallet" />
                     </div>
