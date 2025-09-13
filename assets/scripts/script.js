@@ -2,8 +2,9 @@ new Vue({
   el: "#app",
   data: {
     showMenu: false,
-    expanded: false, // Começa como false para mostrar apenas 4 itens
+    expanded: false,
     darkMode: false,
+    menuMainOpen: true,
     submenu: {
       owners: false,
       settings: false,
@@ -11,10 +12,25 @@ new Vue({
   },
   computed: {
     itemVisible() {
-      // item-visible aparece quando:
-      // 1. Menu está colapsado (showMenu = true)
-      // 2. E os submenus estão fechados (owners = false E settings = false)
       return this.showMenu && !this.submenu.owners && !this.submenu.settings;
+    },
+  },
+  created() {
+    const saveMenuMainOpen = localStorage.getItem("menuMainOpen");
+    const saveDark = localStorage.getItem("darkMode");
+    if (saveMenuMainOpen !== null) {
+      this.menuMainOpen = JSON.parse(saveMenuMainOpen);
+    }
+    if (saveDark !== null) {
+      this.darkMode = JSON.parse(saveDark);
+    }
+  },
+  watch: {
+    menuMainOpen(newVal) {
+      localStorage.setItem("menuMainOpen", JSON.stringify(newVal));
+    },
+    darkMode(newVal) {
+      localStorage.setItem("darkMode", JSON.stringify(newVal));
     },
   },
   methods: {
@@ -26,6 +42,12 @@ new Vue({
     },
     toggleExpanded() {
       this.expanded = !this.expanded;
+    },
+    darkModeFunc() {
+      this.darkMode = !this.darkMode;
+    },
+    menuMain() {
+      this.menuMainOpen = !this.menuMainOpen;
     },
   },
 });

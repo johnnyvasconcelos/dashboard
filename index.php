@@ -18,18 +18,21 @@
         <main>
           <?php require 'includes/header.php'; ?>
           <div class="main">
-                          <div class="title">
-                <h1>Início</h1>
-                <p>Informações gerais da sua empresa!</p>
+                          <div class="title" @click="menuMain()">
+                <h1>Informações gerais</h1>
+                <div class="caret">
+                <img :src="darkMode ? './assets/images/caret.svg' : './assets/images/caret-dark.svg'" :style="{ transform: menuMainOpen ? 'rotate(-180deg)' : 'rotate(0)'}">
+                </div>
               </div>
+              <div class="area" :style="{ height: menuMainOpen ? 'auto' : '0px'}">
             <div class="header">
               <header>
                 <img
-                  src="./assets/images/globe-color.svg"
+                  :src="darkMode ? './assets/images/globe-color.svg' : './assets/images/globe.svg'"
                   alt="globe"
                   class="globe"
                 />
-                <p><b>Site:</b> www.eenu.com.br</p>
+                <p class="p-site"><b>Site:</b> eenu.com.br</p>
                 <a href="#"
                   >Editar Site <img src="./assets/images/edit.svg" alt="edit"
                 /></a>
@@ -38,36 +41,49 @@
                 <h2>Empresas Cadastradas</h2>
                 <div class="icones">
                   <div class="icone">
-                    <img src="./assets/images/wallet-color.svg" alt="wallet" />
+                    <div class="img">
+                    <img :src="darkMode ? './assets/images/wallet-purple.svg' : './assets/images/wallet-dark.svg'" alt="wallet" />
+                    </div>
                     <div class="text">
                       <span>22</span>
                       <p>Empresas</p>
+                      <p>Ativas no sistema</p>
                     </div>
                   </div>
                   <div class="icone">
-                    <img src="./assets/images/users-color.svg" alt="wallet" />
+                    <div class="img">
+                    <img :src="darkMode ? './assets/images/users-purple.svg' : './assets/images/users-dark.svg'" alt="wallet" />
+                    </div>
                     <div class="text">
                       <span>2</span>
                       <p>Usuários</p>
+                      <p>Último login: 10/10</p>
                     </div>
                   </div>
                   <div class="icone">
-                    <img src="./assets/images/chart-color.svg" alt="wallet" />
+                    <div class="img">
+                    <img :src="darkMode ? './assets/images/chart-purple.svg' : './assets/images/chart-dark.svg'" alt="wallet" />
+                    </div>
                     <div class="text">
                       <span>10/20</span>
                       <p>Salas Ocupadas</p>
+                      <p>50% de ocupação</p>
                     </div>
                   </div>
                   <div class="icone">
-                    <img src="./assets/images/star-color.svg" alt="wallet" />
+                    <div class="img">
+                    <img :src="darkMode ? './assets/images/star-purple.svg' : './assets/images/star-dark.svg'" alt="wallet" />
+                    </div>
                     <div class="text">
                       <span>Impulse W...</span>
                       <p>Última Empresa</p>
+                      <p>Responsável: Ricardo Faria</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="table-container">
            <table>
     <tr>
       <th>Data</th>
@@ -102,15 +118,17 @@
     }
     ?>
   </table>
+  </div>
             <footer>
               <div class="btns">
                 <div class="btn ver-mais" @click="toggleExpanded">{{ expanded ? "ver menos" : "ver mais" }}</div>
-                <a href="./cadastrar-empresa.php" class="btn"
+                <a href="./cadastrar-empresa.php" class="btn non"
                   >cadastrar empresa
                   <img src="./assets/images/plus.svg" alt="plus"
                 /></a>
               </div>
             </footer>
+          </div>
           </div>
         </main>
       </div>
