@@ -46,13 +46,14 @@ ul {
 body {
   font-family: "Nunito Sans", sans-serif;
   width: 100%;
-  min-height: 100svh;
 }
 
 .wrapper {
   background-color: #eeeeee;
   overflow-x: hidden;
   max-width: 100vw;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .wrapper.dark {
@@ -67,15 +68,6 @@ body {
 .main-container {
   display: flex;
   align-items: stretch;
-}
-
-aside {
-  background-color: #fff;
-  width: 22%;
-  transition: 0.3s;
-  position: relative;
-  border-right: 1px solid #cecece;
-  min-height: 100vh;
 }
 
 .aside-container {
@@ -94,6 +86,16 @@ aside .aside-container > ul {
   padding-bottom: 20px;
 }
 
+aside {
+  background-color: #fff;
+  width: 22%;
+  transition: 0.3s;
+  position: relative;
+  border-right: 1px solid #cecece;
+  height: 100%;
+  min-height: 100vh;
+}
+
 .dark aside {
   background-color: #020720;
   border-right: 1px solid #cecece00;
@@ -101,7 +103,6 @@ aside .aside-container > ul {
 
 main {
   flex: 1;
-  min-height: 100vh;
 }
 
 main > header {
@@ -784,7 +785,6 @@ table th:nth-of-type(4) {
   position: fixed;
   left: 0;
   top: 0;
-  height: 100vh;
 }
 
 .show-menu-2 ul li a {
@@ -977,30 +977,48 @@ aside.show-menu li span {
   .show-menu-2 > header .logo {
     margin: 0 10px;
   }
+  aside {
+    transform: translateX(-3px);
+  }
   aside li {
     display: flex;
     align-items: center;
+    border-bottom: none;
+  }
+  aside .submenu {
+    padding: 0;
+    width: 100%;
+  }
+  aside li a {
+    height: 100%;
+    border-bottom: 1px solid #f1ebf4;
+  }
+  .dark aside li a {
+    border-bottom: 1px solid #29145377;
   }
   aside li span {
     opacity: 0;
-  }
-  aside li {
-    border-bottom: 1px solid #29145377;
   }
   aside li a {
     align-items: center;
   }
   aside .submenu {
-    margin: 0px;
-    border-left: 2px solid #00000000;
-    margin-left: -2px;
+    margin-left: 0;
+    margin-bottom: -4px;
+    margin-top: 0;
   }
   aside .item-visible {
     height: 60px !important;
     opacity: 1 !important;
     display: flex !important;
     align-items: center !important;
-    border-bottom: 1px solid #31255141;
+    border-bottom: 0px solid #31255141;
+  }
+  aside .item-visible a {
+    border-top: 1px solid #f1ebf4;
+  }
+  .dark aside .item-visible a {
+    border-top: 1px solid #29145377;
   }
   aside .item-visible span {
     opacity: 0;
@@ -1034,15 +1052,17 @@ aside.show-menu li span {
   .menu-background {
     opacity: 0;
     transition: 0.4s;
-    width: 100vw;
-    height: 100vh;
+    width: 0;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     background-color: #00000070;
+    z-index: -1;
   }
   .show-menu-2 .menu-background {
     opacity: 1;
+    width: 105vw;
   }
   .show-menu-2 .bt-mobl {
     opacity: 1;
