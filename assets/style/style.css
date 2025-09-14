@@ -876,7 +876,7 @@ aside.show-menu li span {
   opacity: 0;
 }
 
-.show-menu .item-visible:hover {
+.dark .show-menu .item-visible:hover {
   background-image: linear-gradient(to right, var(--color-1), var(--color-3));
 }
 
