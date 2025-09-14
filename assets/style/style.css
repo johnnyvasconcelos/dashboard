@@ -89,6 +89,7 @@ aside .aside-container > ul {
 aside {
   background-color: #fff;
   width: 22%;
+  max-width: 340px;
   transition: 0.3s;
   position: relative;
   border-right: 1px solid #cecece;
@@ -1117,6 +1118,10 @@ aside.show-menu li span {
   }
   .btns {
     padding: 40px 20px;
+  }
+  .dark .user span {
+    font-size: 12px;
+    margin-top: 3px;
   }
 }
 
