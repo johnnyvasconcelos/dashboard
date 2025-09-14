@@ -409,6 +409,10 @@ main > header > div > p {
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  border: 3px solid #f1ebf4;
+}
+
+.dark .user > img {
   border: 3px solid white;
 }
 
@@ -776,29 +780,6 @@ table th:nth-of-type(4) {
   right: -80px;
 }
 
-.show-menu-2 {
-  min-width: 250px;
-  z-index: 100;
-}
-
-.show-menu-2 {
-  position: fixed;
-  left: 0;
-  top: 0;
-}
-
-.show-menu-2 ul li a {
-  width: 100%;
-}
-
-.show-menu-2 ul li a span {
-  opacity: 1;
-}
-
-.show-menu-2 .submenu {
-  width: 100%;
-}
-
 .show-menu > header {
   padding: 20px;
 }
@@ -831,6 +812,10 @@ aside.show-menu li span {
 }
 
 .show-menu li {
+  border-bottom: 1px solid #f1ebf4;
+}
+
+.dark .show-menu li {
   border-bottom: 1px solid #29145377;
 }
 
@@ -960,21 +945,44 @@ aside.show-menu li span {
   aside {
     width: 80px;
   }
-  aside h3 {
-    display: none;
+  aside h3,
+  aside.show-menu ul .none-mb {
+    display: none !important;
   }
   aside header span,
   .menu-btn {
     display: none !important;
   }
-  .show-menu-2 header span {
+  .show-menu {
+    min-width: 250px;
+    z-index: 100;
+  }
+
+  .show-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+
+  .show-menu ul li a {
+    width: 100%;
+  }
+
+  .show-menu ul li a span {
+    opacity: 1;
+  }
+
+  .show-menu .submenu {
+    width: 100%;
+  }
+  .show-menu header span {
     display: block !important;
   }
-  .show-menu-2 > header {
+  .show-menu > header {
     gap: 0px;
     justify-content: flex-start;
   }
-  .show-menu-2 > header .logo {
+  .show-menu > header .logo {
     margin: 0 10px;
   }
   aside {
@@ -1029,6 +1037,9 @@ aside.show-menu li span {
   aside .none {
     display: none;
   }
+  .mb {
+    border-bottom: none !important;
+  }
   .bt-mobl {
     background-color: #f1ebf4;
     border: 1px solid #ba92cb00;
@@ -1051,7 +1062,6 @@ aside.show-menu li span {
   }
   .menu-background {
     opacity: 0;
-    transition: 0.4s;
     width: 0;
     height: 100%;
     position: fixed;
@@ -1060,17 +1070,17 @@ aside.show-menu li span {
     background-color: #00000070;
     z-index: -1;
   }
-  .show-menu-2 .menu-background {
+  .show-menu .menu-background {
     opacity: 1;
     width: 105vw;
   }
-  .show-menu-2 .bt-mobl {
+  .show-menu .bt-mobl {
     opacity: 1;
     z-index: 1000;
     position: relative;
     top: 0px;
   }
-  .show-menu-2 .bt-mobl img {
+  .show-menu .bt-mobl img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1191,6 +1201,9 @@ aside.show-menu li span {
   }
   .btn.non {
     display: none;
+  }
+  .main .icones .icone span {
+    font-weight: 700;
   }
 }
 

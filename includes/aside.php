@@ -1,12 +1,12 @@
- <aside :class="{ 'show-menu': showMenu, 'show-menu-2': showMenu2 }">
- <div class="menu-background" @click="toggleMenuMobile"></div> 
+ <aside :class="showMenu ? 'show-menu' : 'show-off'">
+ <div class="menu-background" @click="toggleMenu"></div> 
  <header>
     <img :src="darkMode ? './assets/images/logo.png' : './assets/images/logo-normal.png'" alt="logo" class="logo" />
     <span>EENU</span>
     <div class="menu-btn" @click="toggleMenu">
       <img src="./assets/images/menu.svg" alt="menu" />
     </div>
-    <span class="bt-mobl" @click="toggleMenuMobile">
+    <span class="bt-mobl" @click="toggleMenu">
             <img :src="darkMode ? './assets/images/menu.svg' : './assets/images/menu-dark.svg'" alt="menu" />
         </span>
   </header>
@@ -22,7 +22,7 @@
 
       <!-- Proprietários -->
       <li class="menu">
-        <a href="#" class="none" @click.prevent="toggleSubmenu('owners')">
+        <a href="#" class="none none-mb" @click.prevent="toggleSubmenu('owners')">
           <img :src="darkMode ? './assets/images/globe.svg' : './assets/images/globe-dark.svg'" alt="home svg" />
           <span>Proprietários</span>
           <img :src="darkMode ? './assets/images/chevron-down.svg' : './assets/images/chevron-dark.svg'" alt="chevron down" class="icon" />
@@ -34,7 +34,7 @@
               <span>Ver Empresas</span>
             </a>
           </li>
-          <li>
+          <li class="mb">
             <a href="./cadastrar-empresa.html">
               <img :src="darkMode ? './assets/images/seed.svg' : './assets/images/seed-dark.svg'" alt="home svg" />
               <span>Cadastrar Empresa</span>
@@ -44,7 +44,7 @@
       </li>
 
       <!-- Item visível para Proprietários (quando menu colapsado) -->
-      <li class="item-visible" v-show="itemVisible">
+      <li class="item-visible none-mb" v-show="itemVisible">
         <a href="./empresas.html">
           <img :src="darkMode ? './assets/images/globe.svg' : './assets/images/globe-dark.svg'" alt="home svg" />
           <span>Proprietários</span>
@@ -53,7 +53,7 @@
 
       <!-- Configurações -->
       <li class="menu">
-        <a href="#" class="none" @click.prevent="toggleSubmenu('settings')">
+        <a href="#" class="none none-mb" @click.prevent="toggleSubmenu('settings')">
           <img :src="darkMode ? './assets/images/cog.svg' : './assets/images/cog-dark.svg'" alt="home svg" />
           <span>Configurações</span>
           <img :src="darkMode ? './assets/images/chevron-down.svg' : './assets/images/chevron-dark.svg'" alt="chevron down" class="icon" />
@@ -71,7 +71,7 @@
               <span>Cadastrar Usuário</span>
             </a>
           </li>
-          <li class="last">
+          <li class="last mb">
             <a href="./personalizar-painel.html">
               <img :src="darkMode ? './assets/images/edit.svg' : './assets/images/edit-dark.svg'" alt="home svg" style="width: 18px;" />
               <span>Personalizar Painel</span>
@@ -81,7 +81,7 @@
       </li>
 
       <!-- Item visível para Configurações (quando menu colapsado) -->
-      <li class="item-visible" v-show="itemVisible">
+      <li class="item-visible none-mb" v-show="itemVisible">
         <a href="./usuarios.html">
           <img :src="darkMode ? './assets/images/cog.svg' : './assets/images/cog-dark.svg'" alt="settings svg" />
           <span>Configurações</span>
