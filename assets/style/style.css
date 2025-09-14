@@ -223,6 +223,10 @@ aside li a:hover {
   background: var(--dark);
 }
 
+aside li a:hover span {
+  color: white;
+}
+
 .dark aside .active,
 .dark aside li a:hover {
   background: linear-gradient(to right, var(--color-1), var(--color-3));

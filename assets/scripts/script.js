@@ -5,6 +5,7 @@ new Vue({
     expanded: false,
     darkMode: false,
     is976: window.innerWidth <= 976,
+    hoverItem: null,
     menuMainOpen: true,
     submenu: {
       owners: false,
@@ -49,6 +50,26 @@ new Vue({
     },
     menuMain() {
       this.menuMainOpen = !this.menuMainOpen;
+    },
+    getIcon(name) {
+      const li = document
+        .querySelector(`li a img[alt^="${name}"]`)
+        ?.closest("li");
+      const isActive = li && li.classList.contains("active");
+
+      if (isActive) {
+        return this.darkMode
+          ? `./assets/images/${name}.svg`
+          : `./assets/images/${name}-dark.svg`;
+      }
+
+      if (!this.darkMode && this.hoverItem === name) {
+        return `./assets/images/${name}.svg`;
+      }
+
+      return this.darkMode
+        ? `./assets/images/${name}.svg`
+        : `./assets/images/${name}-dark.svg`;
     },
   },
 });
