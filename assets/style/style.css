@@ -33,6 +33,8 @@
   --color-4: #b33dbc;
   --dark: #272531;
   --gray: #33313e;
+  --red: #ed2b27;
+  --light: #f1ebf4;
 }
 
 a {
@@ -130,8 +132,7 @@ aside h3 {
 }
 
 aside > header {
-  flex-shrink: 0; /* Não encolhe */
-  /* Resto das propriedades mantém igual */
+  flex-shrink: 0;
   padding: 40px;
   display: flex;
   gap: 20px;
@@ -315,7 +316,7 @@ main > header > div {
 }
 
 main > header > div > p {
-  background-color: #f1ebf4;
+  background-color: var(--light);
   border: 1px solid #efefef;
   color: var(--color-2);
   border-radius: 50px;
@@ -335,7 +336,7 @@ main > header > div > p {
 }
 
 .search {
-  background-color: #f1ebf4;
+  background-color: var(--light);
   border: 1px solid #efefef;
   width: 280px;
   border-radius: 50px;
@@ -360,9 +361,13 @@ main > header > div > p {
 .search input {
   background-color: transparent;
   border: none;
-  color: white;
+  color: var(--dark);
   font-size: 18px;
   width: 180px;
+}
+
+.dark .search input {
+  color: white;
 }
 
 .search input:focus {
@@ -413,7 +418,7 @@ main > header > div > p {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  border: 3px solid #f1ebf4;
+  border: 3px solid var(--light);
 }
 
 .dark .user > img {
@@ -421,7 +426,7 @@ main > header > div > p {
 }
 
 .title {
-  border-bottom: 1px solid #f1ebf4;
+  border-bottom: 1px solid var(--light);
   cursor: pointer;
   padding: 30px 45px;
   display: flex;
@@ -477,7 +482,7 @@ main > header > div > p {
 .main header {
   position: relative;
   width: 15%;
-  border: 2px dashed #f1ebf4;
+  border: 2px dashed var(--light);
   color: white;
   overflow: hidden;
   display: flex;
@@ -502,8 +507,12 @@ main > header > div > p {
 }
 
 .main header a {
-  color: #a84a9d;
+  color: var(--red);
   transition: 0.2s;
+}
+
+.dark .main header a {
+  color: #a84a9d;
 }
 
 .main header a:hover {
@@ -582,6 +591,8 @@ main > header > div > p {
   height: auto;
   height: 220px;
   padding: 25px;
+  background-color: white;
+  border: 1px solid var(--light);
 }
 .main .icones .icone:hover .img {
   transform: translateY(-5px);
@@ -596,20 +607,27 @@ main > header > div > p {
   align-items: center;
   justify-content: center;
   margin: 0 auto 15px auto;
-  background-color: white;
+  background-color: var(--light);
   border-radius: 50%;
 }
-.main .icones .icone:nth-of-type(1) {
+.dark .icones .icone .img {
+  background-color: white;
+}
+.dark .main .icones .icone:nth-of-type(1) {
   background-color: var(--color-1);
+  border: 1px solid var(--color-1);
 }
-.main .icones .icone:nth-of-type(2) {
+.dark .main .icones .icone:nth-of-type(2) {
   background-color: var(--color-2);
+  border: 1px solid var(--color-2);
 }
-.main .icones .icone:nth-of-type(3) {
+.dark .main .icones .icone:nth-of-type(3) {
   background-color: var(--color-3);
+  border: 1px solid var(--color-3);
 }
-.main .icones .icone:nth-of-type(4) {
+.dark .main .icones .icone:nth-of-type(4) {
   background-color: var(--color-4);
+  border: 1px solid var(--color-4);
 }
 .main .icones .icone .img img {
   width: 30px;
@@ -617,9 +635,12 @@ main > header > div > p {
 .main .icones .icone span {
   display: block;
   margin-top: 10px;
-  color: #e2d573;
+  color: var(--gray);
   font-weight: 400;
   font-size: 40px;
+}
+.dark .main .icones .icone span {
+  color: #e2d573;
 }
 .main .icones .icone:nth-of-type(4) span {
   font-size: 18px;
@@ -704,12 +725,20 @@ table tr th {
   color: #734a9c;
 }
 
+.p-site {
+  color: var(--gray);
+}
+
 .p-site b {
   display: block;
 }
 
+.dark .p-site {
+  color: white;
+}
+
 table tbody tr.par {
-  background: #f1ebf4;
+  background: #eeeeee;
 }
 
 table tbody tr.impar {
@@ -726,7 +755,7 @@ table tbody tr.impar {
 
 table tr.par:hover,
 table tr.impar:hover {
-  background: #f1ebf4;
+  background: #dfdfdf;
 }
 
 .dark table tr.par:hover,
@@ -759,7 +788,7 @@ table th:nth-of-type(4) {
 }
 .btn {
   border: 3px solid white;
-  background-color: var(--color-3);
+  background-color: var(--red);
   padding: 12px 20px;
   font-size: 16px;
   color: white;
@@ -769,6 +798,9 @@ table th:nth-of-type(4) {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.dark .btn {
+  background-color: var(--color-3);
 }
 .ver-mais {
   cursor: pointer;
@@ -816,7 +848,7 @@ aside.show-menu li span {
 }
 
 .show-menu li {
-  border-bottom: 1px solid #f1ebf4;
+  border-bottom: 1px solid var(--light);
 }
 
 .dark .show-menu li {
@@ -1003,7 +1035,7 @@ aside.show-menu li span {
   }
   aside li a {
     height: 100%;
-    border-bottom: 1px solid #f1ebf4;
+    border-bottom: 1px solid var(--light);
   }
   .dark aside li a {
     border-bottom: 1px solid #29145377;
@@ -1027,7 +1059,7 @@ aside.show-menu li span {
     border-bottom: 0px solid #31255141;
   }
   aside .item-visible a {
-    border-top: 1px solid #f1ebf4;
+    border-top: 1px solid var(--light);
   }
   .dark aside .item-visible a {
     border-top: 1px solid #29145377;
@@ -1045,7 +1077,7 @@ aside.show-menu li span {
     border-bottom: none !important;
   }
   .bt-mobl {
-    background-color: #f1ebf4;
+    background-color: var(--light);
     border: 1px solid #ba92cb00;
     color: #efe2ed;
     display: flex;

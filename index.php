@@ -28,7 +28,7 @@
             <div class="header">
               <header>
                 <img
-                  :src="darkMode ? './assets/images/globe-color.svg' : './assets/images/globe.svg'"
+                  :src="darkMode ? './assets/images/globe-color.svg' : './assets/images/globe-dark.svg'"
                   alt="globe"
                   class="globe"
                 />
