@@ -71,10 +71,10 @@ body {
 }
 
 .aside-container {
-  position: sticky;
-  top: 0;
   background: white;
-  height: 100%;
+  min-height: 100vh;
+  height: auto;
+  flex: 1;
 }
 
 .dark .aside-container {
@@ -84,6 +84,9 @@ body {
 aside .aside-container > ul {
   z-index: 10;
   padding-bottom: 20px;
+  height: 100%;
+  position: sticky;
+  top: 0;
 }
 
 aside {
@@ -93,7 +96,7 @@ aside {
   transition: 0.3s;
   position: relative;
   border-right: 1px solid #cecece;
-  height: 100%;
+  height: auto;
   min-height: 100vh;
 }
 
