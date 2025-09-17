@@ -6,7 +6,7 @@
     <div>
         <p class="moon-div">
         <img :src="darkMode ? './assets/images/moon.svg' : './assets/images/moon-dark.svg'" alt="moon" class="moon" @click="darkModeFunc()">
-</p>
+        </p>
         <p class="nimbus">
         <img :src="darkMode ? './assets/images/cloud.svg' : './assets/images/cloud-dark.svg'" alt="nimbus" />
         <span>16°</span>
@@ -15,9 +15,14 @@
             <img :src="darkMode ? './assets/images/menu.svg' : './assets/images/menu-dark.svg'" alt="menu" />
         </span>
         <div class="user" @click="userMenu = !userMenu">
-        <img src="./assets/images/user.jpg" alt="user" />
+                        <?php
+require 'config.php';
+$result = $conn->query("SELECT nome, foto FROM usuarios WHERE id = 1");
+$row = $result->fetch_assoc();
+?>
+        <img src="assets/images/<?php echo htmlspecialchars($row['foto'] ?? 'user-default.webp'); ?>" alt="<?php echo htmlspecialchars($row['nome']); ?>" />
         <div>
-            <p>Christian</p>
+<p><?php echo htmlspecialchars($row['nome']); ?></p>
             <span>Admnistrador&nbsp;
                 <img
                       :src="darkMode ? './assets/images/chevron-pink.svg' : './assets/images/chevron-down-dark.svg'"
@@ -26,7 +31,7 @@
             </span>
         </div>
         <ul v-show="userMenu" class="user-menu">
-            <li><a href="#">Logout</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
         </div>
     </div>

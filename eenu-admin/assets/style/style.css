@@ -31,6 +31,7 @@
   --color-2: #4f207e;
   --color-3: #7c2a7a;
   --color-4: #b33dbc;
+  --border: #29145377;
   --dark: #272531;
   --gray: #33313e;
   --red: #ed2b27;
@@ -473,7 +474,7 @@ main > header > div > p {
 }
 
 .dark .title {
-  border-bottom: 1px solid #29145377;
+  border-bottom: 1px solid var(--border);
 }
 
 .title h1 {
@@ -519,7 +520,7 @@ main > header > div > p {
 }
 
 .dark .main header {
-  border: 2px dashed #29145377;
+  border: 2px dashed var(--border);
 }
 
 .main header img {
@@ -707,7 +708,7 @@ table tr {
   opacity: 1;
 }
 .dark table tr {
-  border-bottom: 1px solid #29145377;
+  border-bottom: 1px solid var(--border);
 }
 table tr.collapsed {
   max-height: 0;
@@ -884,7 +885,7 @@ aside.show-menu li span {
 }
 
 .dark .show-menu li {
-  border-bottom: 1px solid #29145377;
+  border-bottom: 1px solid var(--border);
 }
 
 .show-menu .submenu {
@@ -1070,7 +1071,7 @@ aside.show-menu li span {
     border-bottom: 1px solid var(--light);
   }
   .dark aside li a {
-    border-bottom: 1px solid #29145377;
+    border-bottom: 1px solid var(--border);
   }
   aside li span {
     opacity: 0;
@@ -1094,7 +1095,7 @@ aside.show-menu li span {
     border-top: 1px solid var(--light);
   }
   .dark aside .item-visible a {
-    border-top: 1px solid #29145377;
+    border-top: 1px solid var(--border);
   }
   aside .item-visible span {
     opacity: 0;
