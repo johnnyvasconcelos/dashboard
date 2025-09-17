@@ -15,15 +15,20 @@
             <img :src="darkMode ? './assets/images/menu.svg' : './assets/images/menu-dark.svg'" alt="menu" />
         </span>
         <div class="user" @click="userMenu = !userMenu">
-                        <?php
+                      <?php
 require 'config.php';
-$result = $conn->query("SELECT nome, foto FROM usuarios WHERE id = 1");
-$row = $result->fetch_assoc();
+$usuario_id = $_SESSION['usuario_id'] ?? $_COOKIE['usuario_id'] ?? null;
+if ($usuario_id) {
+    $result = $conn->query("SELECT nome, foto, funcao FROM usuarios WHERE id = $usuario_id LIMIT 1");
+    $row = $result->fetch_assoc();
+} else {
+    $row = ['nome' => 'Visitante', 'foto' => 'user-default.webp'];
+}
 ?>
         <img src="assets/images/<?php echo htmlspecialchars($row['foto'] ?? 'user-default.webp'); ?>" alt="<?php echo htmlspecialchars($row['nome']); ?>" />
         <div>
 <p><?php echo htmlspecialchars($row['nome']); ?></p>
-            <span>Admnistrador&nbsp;
+            <span><?php echo htmlspecialchars($row['funcao']); ?>&nbsp;
                 <img
                       :src="darkMode ? './assets/images/chevron-pink.svg' : './assets/images/chevron-down-dark.svg'"
                       alt="chevron"
