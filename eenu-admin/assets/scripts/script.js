@@ -6,6 +6,7 @@ new Vue({
     darkMode: false,
     userMenu: false,
     is976: window.innerWidth <= 976,
+    currentPath: window.location.pathname.split("/").pop(),
     hoverItem: null,
     menuMainOpen: true,
     submenu: {
@@ -37,6 +38,9 @@ new Vue({
     },
   },
   methods: {
+    isPage(page) {
+      return this.currentPath === page;
+    },
     toggleMenu() {
       this.showMenu = !this.showMenu;
     },
@@ -52,22 +56,21 @@ new Vue({
     menuMain() {
       this.menuMainOpen = !this.menuMainOpen;
     },
-    getIcon(name) {
-      const li = document
-        .querySelector(`li a img[alt^="${name}"]`)
-        ?.closest("li");
-      const isActive = li && li.classList.contains("active");
+    getIcon(name, page) {
+      // page = página que o li representa, ex: 'index.php'
+      const isActive = this.isPage(page);
 
+      // se ativo, sempre retorna branco
       if (isActive) {
-        return this.darkMode
-          ? `./assets/images/${name}.svg`
-          : `./assets/images/${name}-dark.svg`;
+        return `./assets/images/${name}.svg`;
       }
 
+      // hover
       if (!this.darkMode && this.hoverItem === name) {
         return `./assets/images/${name}.svg`;
       }
 
+      // modo normal/dark
       return this.darkMode
         ? `./assets/images/${name}.svg`
         : `./assets/images/${name}-dark.svg`;

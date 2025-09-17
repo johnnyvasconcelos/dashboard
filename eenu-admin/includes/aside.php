@@ -13,10 +13,10 @@
   <div class="aside-container">
     <h3>visão geral</h3>
     <ul>
-      <li class="active">
+      <li  :class="{ active: isPage('index.php') }">
         <a href="./index.php" @mouseover="hoverItem = 'home'" 
        @mouseleave="hoverItem = null">
-          <img src="./assets/images/home.svg" alt="home svg" />
+          <img :src="getIcon('home', 'index.php')" alt="home svg" />
           <span>Início</span>
         </a>
       </li>
@@ -25,26 +25,26 @@
       <li class="menu">
         <a href="#" class="none none-mb" @click.prevent="toggleSubmenu('owners')" @mouseover="hoverItem = 'globe'" 
        @mouseleave="hoverItem = null">
-          <img :src="getIcon('globe')" alt="home svg" />
+          <img :src="getIcon('globe')" alt="globe svg" />
           <span>Proprietários</span>
           <img :src="darkMode ? './assets/images/chevron-down.svg' : './assets/images/chevron-dark.svg'" alt="chevron down" class="icon" />
         </a>
         <ul class="submenu" :class="{ 'submenu-none': submenu.owners }">
-          <li>
+          <li :class="{ active: isPage('empresas.php') }">
             <a href="./empresas.php"
              @mouseover="hoverItem = 'book'" 
        @mouseleave="hoverItem = null"
             >
-              <img :src="getIcon('book')" alt="book svg" />
+              <img :src="getIcon('book', 'empresas.php')" alt="book svg" />
               <span>Ver Empresas</span>
             </a>
           </li>
-          <li class="mb">
+          <li class="mb" :class="{ active: isPage('cadastrar-empresa.php') }">
             <a href="./cadastrar-empresa.php"
             @mouseover="hoverItem = 'seed'" 
        @mouseleave="hoverItem = null"
             >
-              <img :src="getIcon('seed')" alt="seed svg" />
+              <img :src="getIcon('seed', 'cadastrar-empresa.php')" alt="seed svg" />
               <span>Cadastrar Empresa</span>
             </a>
           </li>
@@ -73,30 +73,30 @@
           <img :src="darkMode ? './assets/images/chevron-down.svg' : './assets/images/chevron-dark.svg'" alt="chevron down" class="icon" />
         </a>
         <ul class="submenu" :class="{ 'submenu-none': submenu.settings }">
-          <li>
+          <li :class="{ active: isPage('usuarios.php') }">
             <a href="./usuarios.php"
             @mouseover="hoverItem = 'users'" 
        @mouseleave="hoverItem = null"
             >
-              <img :src="getIcon('users')" alt="users svg" />
+              <img :src="getIcon('users', 'usuarios.php')" alt="users svg" />
               <span>Usuários</span>
             </a>
           </li>
-          <li>
+          <li :class="{ active: isPage('cadastrar-usuario.php') }">
             <a href="./cadastrar-usuario.php"
             @mouseover="hoverItem = 'user'" 
        @mouseleave="hoverItem = null"
             >
-              <img :src="getIcon('user')" alt="user svg" style="width: 23px" />
+              <img :src="getIcon('user', 'cadastrar-usuario.php')" alt="user svg" style="width: 23px" />
               <span>Cadastrar Usuário</span>
             </a>
           </li>
-          <li class="last mb">
+          <li class="last mb" :class="{ active: isPage('personalizar-painel.php') }">
             <a href="./personalizar-painel.php"
             @mouseover="hoverItem = 'edit'" 
        @mouseleave="hoverItem = null"
             >
-              <img :src="getIcon('edit')" alt="edit svg" style="width: 18px;" />
+              <img :src="getIcon('edit', 'personalizar-painel.php')" alt="edit svg" style="width: 18px;" />
               <span>Personalizar Painel</span>
             </a>
           </li>
