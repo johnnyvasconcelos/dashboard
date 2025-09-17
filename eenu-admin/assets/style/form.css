@@ -32,19 +32,20 @@
 }
 
 .input:nth-of-type(1) {
-  width: 45%;
+  width: 40%;
 }
 
 .input:nth-of-type(2) {
-  width: 45%;
+  width: 40%;
 }
 
 .input:nth-of-type(3) {
-  width: 10%;
+  width: 20%;
 }
 
 .form-area input,
-.form-area textarea {
+.form-area textarea,
+.form-area select {
   border: 1px solid #cecece;
   height: 50px;
   padding: 15px;
@@ -54,10 +55,19 @@
   font-size: 20px;
 }
 
+.form-area select {
+  font-size: 18px;
+}
+
 .dark input,
-.dark textarea {
+.dark textarea,
+.dark select {
   border: 1px solid var(--border);
   color: white;
+}
+
+.dark select option {
+  color: var(--dark);
 }
 
 .form-area textarea {

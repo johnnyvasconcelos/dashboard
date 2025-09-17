@@ -1,13 +1,10 @@
 <?php
-// index.php
 session_start();
 require 'includes/config.php';
-// Verifica login
 if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
     header('Location: login.php');
     exit;
 }
-// Depois que tudo de login e sessão foi verificado, inclua HTML e outros includes
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,15 +107,12 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
         while ($row = $result->fetch_assoc()) {
             $linha++;
             $classe = ($linha % 2 == 0) ? "par" : "impar";
-
-            // Adiciona v-show para controlar a visibilidade
             $vShow = ($linha <= 4) ? "" : "v-show=\"expanded\"";
-
             echo "<tr class='$classe' $vShow>";
             echo "<td>" . date('d/m', strtotime($row['data'])) . "</td>";
             echo "<td>" . htmlspecialchars($row['empresa_nome']) . "</td>";
             echo "<td>" . htmlspecialchars($row['responsavel']) . "</td>";
-            echo "<td><img src='" . htmlspecialchars($row['cadastrante_imagem']) . "' alt='user' />" 
+            echo "<td><img src='assets/images/" . htmlspecialchars($row['cadastrante_imagem']) . "' alt='user' />" 
                  . htmlspecialchars($row['cadastrante_nome']) . "</td>";
             echo "</tr>";
         }

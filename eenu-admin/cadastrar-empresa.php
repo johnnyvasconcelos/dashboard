@@ -20,57 +20,55 @@
             <div class="main">
             <div class="form-area">
             <h1>Cadastrar Empresa</h1>
-            <form>
+            <form method="POST" action="actions/cadastrar_empresa.php">
               <div class="inputs">
                 <div class="input">
               <label for="name">Nome Empresa</label>
-              <input>
+              <input name="empresa_nome">
               </div>
               <div class="input">
               <label>Responsável</label>
-              <input>
+              <input name="responsavel">
               </div>
               <div class="input">
               <label>Telefone</label>
-              <input type="number">
+              <input name="numero_empresa" type="number">
               </div>
               </div>
 
               <div class="inputs">
                 <div class="input">
               <label for="name">Torre</label>
-              <select>
-                <option>Torre 1</option>
-                <option>Torre 2</option>
+              <select name="torre">
+                <option value="Torre 1">Torre 1</option>
+                <option value="Torre 2">Torre 2</option>
               </select>
               </div>
               <div class="input">
               <label>Andar</label>
-              <select>
-                <option>Térreo</option>
-                <option>Andar 1</option>
-                <option>Andar 2</option>
-                <option>Andar 3</option>
+              <select name="andar">
+                <option value="Térreo">Térreo</option>
+                <option value="Andar 1">Andar 1</option>
+                <option value="Andar 2">Andar 2</option>
+                <option value="Andar 3">Andar 3</option>
               </select>
               </div>
               <div class="input">
               <label>N° Sala</label>
-              <input type="number">
+              <input name="numero_sala" type="number">
               </div>
               </div>
-
               <label>Descrição (opcional)</label>
-              <textarea name="" id=""></textarea>
+              <textarea name="descricao"></textarea>
               <div style="display:none">
               <!-- cadastrante = usuário logado -->
-              <input value="user">
+              <input name="cadastrante_nome" value="<?php echo htmlspecialchars($row['nome']); ?>">
+              <input name="cadastrante_imagem" value="<?php echo htmlspecialchars($row['foto']); ?>">
+              <input name="data" value="">
               </div>
               <button type="submit"><span>cadastrar</span><img src="assets/images/plus.svg" alt="plus svg" /></button>
             </form>
-</div>
-telefone
-email
-            
+            </div>      
             </div>
         </main>
       </div>
