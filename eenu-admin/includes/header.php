@@ -36,7 +36,7 @@ if ($usuario_id) {
             </span>
         </div>
         <ul v-show="userMenu" class="user-menu">
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="logout.php"><img src="assets/images/logout.svg" alt="logout svg" /><span>Sair</span></a></li>
         </ul>
         </div>
     </div>

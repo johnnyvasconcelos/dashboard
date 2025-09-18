@@ -386,7 +386,7 @@ main > header > div > p {
 
 .user {
   display: flex;
-  aling-items: center;
+  align-items: center;
   gap: 15px;
   cursor: pointer;
   position: relative;
@@ -449,6 +449,22 @@ main > header > div > p {
 
 .user-menu li:nth-of-type(1) {
   border: none;
+}
+
+.user-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--dark);
+}
+
+.user-menu li a span,
+.dark .user-menu li a span {
+  color: var(--dark);
+}
+
+.user-menu li a img {
+  width: 20px;
 }
 
 .title {
@@ -1209,7 +1225,6 @@ aside.show-menu li span {
   }
   main > header > div {
     width: 100%;
-    overflow: hidden;
     gap: 20px;
   }
 }
@@ -1278,9 +1293,17 @@ aside.show-menu li span {
   .main .icones .icone span {
     font-weight: 700;
   }
+  .user-menu {
+    width: 100px;
+    left: -40px !important;
+    display: none;
+  }
 }
 
 @media (max-width: 354px) {
+  .wrapper {
+    overflow-x: hidden;
+  }
   .main {
     width: 88%;
   }

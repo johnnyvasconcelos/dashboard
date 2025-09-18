@@ -13,7 +13,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modelo Dashboard EENU</title>
     <link rel="stylesheet" href="./assets/style/style.css" />
-        <link rel="stylesheet" href="./assets/style/transitions.css" />
+    <link rel="stylesheet" href="assets/style/table.css" />
     <script src="./assets/scripts/vue.min.js"></script>
     <script src="./assets/scripts/script.js" defer></script>
   </head>
@@ -25,10 +25,78 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
         <main>
           <?php require 'includes/header.php'; ?>
             <div class="main">
-                         
-            
+              <div class="form-area">
+            <h1>Empresas Cadastradas</h1>
+</div>
+              <div class="table-container">
+                          <table class="alt-table">
+    <tr>
+      <th>Empresa</th>
+      <th>Responsável</th>
+      <th>Torre</th>
+      <th>Andar</th>
+      <th>N° Sala</th>
+    </tr>
+
+    <?php
+    $sql = "SELECT * FROM empresas ORDER BY data DESC";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $linha = 0;
+        while ($row = $result->fetch_assoc()) {
+            $linha++;
+            $classe = ($linha % 2 == 0) ? "par" : "impar";
+            $vShow = ($linha <= 114) ? "" : "v-show=\"expanded\"";
+            echo "<tr class='$classe' $vShow @click=\"abrirModal({
+          id: '" . $row['id'] . "',
+          empresa_nome: '" . htmlspecialchars($row['empresa_nome']) . "',
+          data: '" . htmlspecialchars($row['data']) . "',
+          descricao: '" . htmlspecialchars($row['descricao']) . "',
+          telefone: '" . htmlspecialchars($row['telefone']) . "',
+          cadastrante: '" . htmlspecialchars($row['cadastrante_nome']) . "',
+          cadastrante_imagem: '" . htmlspecialchars($row['cadastrante_imagem']) . "'
+        })\">";
+            echo "<td>" . htmlspecialchars($row['empresa_nome']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['responsavel']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['torre']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['andar']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['numero_sala']) . "</td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='4'>Nenhuma empresa cadastrada.</td></tr>";
+    }
+    ?>
+  </table>
+  </div>
             </div>
         </main>
+        <!-- Modal -->
+<div class="modal modal-table" v-cloak v-if="modalAberto" @click="modalAberto = false">
+  <div class="modal-content" @click.stop>
+    <span class="close" @click="modalAberto = false">&times;</span>
+
+    <!-- Nome da empresa em destaque -->
+    <h2>{{ empresaSelecionada.empresa_nome }}</h2>
+
+    <p><strong>Data:</strong> {{ empresaSelecionada.data }}</p>
+    <p><strong>Descrição:</strong> {{ empresaSelecionada.descricao }}</p>
+    <p><strong>Telefone:</strong> {{ empresaSelecionada.telefone }}</p>
+    <p><strong>Cadastrante:</strong> {{ empresaSelecionada.cadastrante }}</p>
+
+    <img :src="empresaSelecionada.cadastrante_imagem || './user-default.webp'" 
+         alt="Imagem do cadastrante"
+         style="width:100px; height:100px; border-radius:50%; margin: 10px 0;">
+
+    <!-- Botão de remover -->
+    <button class="btn-trash" @click="removerEmpresa(empresaSelecionada.id)">
+      <img src="assets/images/trash.svg" alt="Remover" style="width:24px; height:24px;">
+      Remover
+    </button>
+  </div>
+</div>
+
       </div>
     </div>
   </div>

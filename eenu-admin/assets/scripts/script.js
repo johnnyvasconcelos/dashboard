@@ -10,6 +10,8 @@ new Vue({
     currentPath: window.location.pathname.split("/").pop(),
     hoverItem: null,
     menuMainOpen: true,
+    modalAberto: false,
+    empresaSelecionada: {},
     submenu: {
       owners: false,
       settings: false,
@@ -57,21 +59,35 @@ new Vue({
     menuMain() {
       this.menuMainOpen = !this.menuMainOpen;
     },
-    getIcon(name, page) {
-      // page = página que o li representa, ex: 'index.php'
-      const isActive = this.isPage(page);
+    abrirModal(empresa) {
+      this.empresaSelecionada = empresa;
+      this.modalAberto = true;
+    },
+    removerEmpresa(id) {
+      this.modalAberto = false;
+      if (!confirm("Tem certeza que deseja remover esta empresa?")) return;
 
-      // se ativo, sempre retorna branco
+      fetch("remover_empresa.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "id=" + encodeURIComponent(id),
+      })
+        .then((res) => res.text())
+        .then((res) => {
+          alert(res);
+          this.modalAberto = false;
+          location.reload(); // recarrega a tabela
+        })
+        .catch((err) => alert("Erro: " + err));
+    },
+    getIcon(name, page) {
+      const isActive = this.isPage(page);
       if (isActive) {
         return `./assets/images/${name}.svg`;
       }
-
-      // hover
       if (!this.darkMode && this.hoverItem === name) {
         return `./assets/images/${name}.svg`;
       }
-
-      // modo normal/dark
       return this.darkMode
         ? `./assets/images/${name}.svg`
         : `./assets/images/${name}-dark.svg`;
