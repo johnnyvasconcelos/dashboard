@@ -37,11 +37,18 @@ main {
 }
 .modal-content {
   width: 400px;
-  height: 340px;
+  height: auto;
   background-color: white;
   padding: 20px;
   position: relative;
   border: 1px solid #eee;
+  color: var(--dark);
+}
+.modal-content a {
+  color: var(--red);
+}
+.dark .modal-content a {
+  color: var(--color-4);
 }
 .modal-table .close {
   cursor: pointer;
@@ -56,6 +63,11 @@ main {
   position: absolute;
   right: 20px;
   top: 20px;
+}
+.modal-table .img-user {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
 }
 .modal-table .close:hover {
   background-color: var(--dark);
@@ -72,9 +84,30 @@ main {
 [v-cloak] {
   display: none;
 }
+.modal-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.modal-btns .btn {
+  cursor: pointer;
+  border: 1px solid #cecece;
+  color: var(--dark);
+  background-color: white;
+}
+.modal-btns .btn:hover {
+  background-color: #cecece;
+}
 @media (max-width: 560px) {
   .form-area h1 {
     font-size: 25px;
     padding: 30px;
+  }
+  .modal-content {
+    width: 90%;
+    max-width: 320px;
+    overflow: hidden;
   }
 }

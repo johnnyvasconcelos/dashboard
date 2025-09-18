@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['atualizar'])) {
     <link rel="stylesheet" href="assets/style/form.css" />
     <script src="assets/scripts/vue.min.js"></script>
     <script src="assets/scripts/script.js" defer></script>
-    <title>Cadastrar Empresa - Dashboard EENU</title>
+    <title>Editar Empresa - Dashboard EENU</title>
   </head>
   <body>
     <div id="app">
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['atualizar'])) {
           <?php require 'includes/header.php'; ?>
             <div class="main">
             <div class="form-area">
-            <h1>Cadastrar Empresa</h1>
+            <h1>Editar Empresa</h1>
              <form method="POST" action="editar-empresa.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
     <div class="inputs">
       <div class="input">
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['atualizar'])) {
       </div>
       <div class="input">
         <label>Telefone</label>
-        <input name="telefone" type="number" 
+        <input name="telefone" type="tel" 
        value="<?php echo htmlspecialchars($empresa['telefone'] ?? ''); ?>" 
        required>
       </div>

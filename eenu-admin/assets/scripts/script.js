@@ -8,6 +8,9 @@ new Vue({
     showPassword: false,
     is976: window.innerWidth <= 976,
     currentPath: window.location.pathname.split("/").pop(),
+    empresaSelecionada: {
+      empresa_nome: "<?php echo addslashes($empresa['empresa_nome']); ?>",
+    },
     hoverItem: null,
     menuMainOpen: true,
     modalAberto: false,
@@ -20,6 +23,18 @@ new Vue({
   computed: {
     itemVisible() {
       return this.showMenu && !this.submenu.owners && !this.submenu.settings;
+    },
+    baseUrl() {
+      return window.location.origin;
+    },
+    empresaSlug() {
+      let text = this.empresaSelecionada.empresa_nome || "";
+      return text
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/[^\w\-]+/g, "")
+        .replace(/\-\-+/g, "-");
     },
   },
   created() {
@@ -43,6 +58,16 @@ new Vue({
   methods: {
     isPage(page) {
       return this.currentPath === page;
+    },
+    slugify(text) {
+      return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/[^\w\-]+/g, "")
+        .replace(/\-\-+/g, "-");
     },
     toggleMenu() {
       this.showMenu = !this.showMenu;
