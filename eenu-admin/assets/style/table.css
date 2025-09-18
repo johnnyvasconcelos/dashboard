@@ -40,7 +40,31 @@ main {
   height: 340px;
   background-color: white;
   padding: 20px;
+  position: relative;
   border: 1px solid #eee;
+}
+.modal-table .close {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--dark);
+  color: var(--dark);
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.modal-table .close:hover {
+  background-color: var(--dark);
+}
+.modal-table .close:hover span {
+  color: white;
+}
+.modal-table .close span {
+  font-size: 20px;
 }
 .menu-btn {
   z-index: 99999;

@@ -75,25 +75,23 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
         <!-- Modal -->
 <div class="modal modal-table" v-cloak v-if="modalAberto" @click="modalAberto = false">
   <div class="modal-content" @click.stop>
-    <span class="close" @click="modalAberto = false">&times;</span>
-
-    <!-- Nome da empresa em destaque -->
+    <span class="close" @click="modalAberto = false"><span>&times;</span></span>
     <h2>{{ empresaSelecionada.empresa_nome }}</h2>
-
     <p><strong>Data:</strong> {{ empresaSelecionada.data }}</p>
     <p><strong>Descrição:</strong> {{ empresaSelecionada.descricao }}</p>
     <p><strong>Telefone:</strong> {{ empresaSelecionada.telefone }}</p>
     <p><strong>Cadastrante:</strong> {{ empresaSelecionada.cadastrante }}</p>
-
-    <img :src="empresaSelecionada.cadastrante_imagem || './user-default.webp'" 
+    <img :src="'assets/images/' + empresaSelecionada.cadastrante_imagem || 'assets/images/user-default.webp'" 
          alt="Imagem do cadastrante"
          style="width:100px; height:100px; border-radius:50%; margin: 10px 0;">
-
-    <!-- Botão de remover -->
     <button class="btn-trash" @click="removerEmpresa(empresaSelecionada.id)">
       <img src="assets/images/trash.svg" alt="Remover" style="width:24px; height:24px;">
       Remover
     </button>
+    <a class="btn-edit" :href="'editar-empresa.php?id=' + empresaSelecionada.id">
+  <img src="assets/images/edit-dark.svg" alt="Edit" style="width:24px; height:24px;">
+  Editar
+</a>
   </div>
 </div>
 
