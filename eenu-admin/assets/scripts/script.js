@@ -5,6 +5,7 @@ new Vue({
     expanded: false,
     darkMode: false,
     userMenu: false,
+    showPassword: false,
     is976: window.innerWidth <= 976,
     currentPath: window.location.pathname.split("/").pop(),
     hoverItem: null,

@@ -1,4 +1,11 @@
-<?php include 'includes/config.php'; ?>
+<?php
+session_start();
+require 'includes/config.php';
+if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
+    header('Location: login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
