@@ -32,12 +32,12 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
             <li><a href="#">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#equipe">Equipe</a></li>
-            <li><a href="#gallery">Galeria</a></li>
+            <li><a href="#gallery">Portfólio</a></li>
             <li><a href="#contact">Contato</a></li>
             <p class="copy">Studio Prisma - Todos os Direitos Reservados.</p>
           </ul>
           <div class="menu-overlay"></div>
-          <a class="nav-btn" href="#gallery"><span>Portfólio</span></a>
+          <a class="nav-btn" href="#gallery"><span>Galeria</span></a>
           <div class="mob-btn">
             <span class="pipe"></span>
           </div>
@@ -66,7 +66,7 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
               <a href="#" class="btn">saiba mais</a>
             </div>
           </div>
-          <div class="image"></div>
+          <div class="image" style="background-image: url(assets/images/author.webp);"></div>
         </div>
       </section>
       <section class="method">
@@ -111,7 +111,7 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
       </section>
       <section class="galeria" id="gallery">
         <div class="container">
-          <h2>Galeria de Eventos</h2>
+          <h2>Galeria de Projetos</h2>
           <div class="carrossel-area"></div>
         </div>
       </section>

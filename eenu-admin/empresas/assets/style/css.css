@@ -239,7 +239,6 @@ h1 {
 .about .image {
   width: 330px;
   height: 100%;
-  background-image: url("../images/estilista.webp");
   background-size: cover;
   position: absolute;
   right: 0;
