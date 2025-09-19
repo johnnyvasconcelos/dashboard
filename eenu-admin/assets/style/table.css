@@ -44,6 +44,24 @@ main {
   border: 1px solid #eee;
   color: var(--dark);
 }
+.modal-content h2 {
+  padding: 20px;
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.modal-content .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.modal-content p {
+  text-align: center;
+}
+.modal-content p strong {
+  color: #7c7c7c;
+}
 .modal-content a {
   color: var(--red);
 }
@@ -68,6 +86,8 @@ main {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  display: block;
+  margin: 10px auto;
 }
 .modal-table .close:hover {
   background-color: var(--dark);
@@ -90,15 +110,33 @@ main {
   align-items: center;
   width: 100%;
   gap: 10px;
+  margin-top: 15px;
 }
 .modal-btns .btn {
   cursor: pointer;
   border: 1px solid #cecece;
   color: var(--dark);
-  background-color: white;
+  background-color: #cecece;
 }
 .modal-btns .btn:hover {
-  background-color: #cecece;
+  background-color: #b4b4b4;
+}
+.edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--dark) !important;
+  text-decoration: underline;
+}
+.dark .edit-btn,
+.dark .btn-edit {
+  color: var(--dark) !important;
+}
+.edit-btn img {
+  width: 12px;
+}
+.phone {
+  width: 12px;
 }
 @media (max-width: 560px) {
   .form-area h1 {

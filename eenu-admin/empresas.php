@@ -77,22 +77,22 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
   <div class="modal-content" @click.stop>
     <span class="close" @click="modalAberto = false"><span>&times;</span></span>
     <h2>{{ empresaSelecionada.empresa_nome }}</h2>
-    <p><strong>Página:</strong><br>
+    <p><strong>Página:</strong> <a href="empresas/pagina-empresa.php">
+ {{ `${slugify(empresaSelecionada.empresa_nome)}.php` }}
+</a><br>
   <!-- 
     <a :href="`${window.location.origin}/empresa/${slugify(empresaSelecionada.empresa_nome)}.php`">
   {{ `${window.location.origin}/empresa/${slugify(empresaSelecionada.empresa_nome)}.php` }}
 </a>
  -->
-<a href="empresas/pagina-empresa.php">
- {{ `${window.location.origin}/empresa/${slugify(empresaSelecionada.empresa_nome)}.php` }}
-</a>
-<a href="editar-pagina.php">Editar página <img src="assets/images/edit-dark.svg" alt="Edit"></a>
+<div class="flex">
+<a href="editar-pagina.php" class="edit-btn">Editar página <img src="assets/images/edit-dark.svg" alt="Edit"></a>
+</div>
 </p>
     <p><strong>Descrição:</strong> {{ empresaSelecionada.descricao }}</p>
-    <p><img src="assets/images/phone.svg" alt="Edit"> <strong>Telefone:</strong> {{ empresaSelecionada.telefone }}</p>
-    <p><strong>Cadastrante:</strong> {{ empresaSelecionada.cadastrante }}     <img :src="'assets/images/' + empresaSelecionada.cadastrante_imagem || 'assets/images/user-default.webp'" 
-         alt="Imagem do cadastrante" class="img-user"></p>
-    <p><strong>Data de Cadastro:</strong> {{ empresaSelecionada.data }}</p>
+    <p><img class="phone" src="assets/images/phone.svg" alt="Edit"> <strong>Telefone:</strong> {{ empresaSelecionada.telefone }}</p>
+    <p><strong>Cadastrante:</strong> {{ empresaSelecionada.cadastrante }}</p>
+    <p><strong>Cadastro:</strong> {{ empresaSelecionada.data }}</p>
     <div class="modal-btns">
     <a class="btn-edit btn" :href="'editar-empresa.php?id=' + empresaSelecionada.id">
     <img src="assets/images/edit-dark.svg" alt="Edit">
