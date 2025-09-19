@@ -6,6 +6,8 @@ new Vue({
     darkMode: false,
     userMenu: false,
     showPassword: false,
+    empresa_nome: "",
+    slug: "",
     is976: window.innerWidth <= 976,
     currentPath: window.location.pathname.split("/").pop(),
     empresaSelecionada: {
@@ -48,6 +50,9 @@ new Vue({
     }
   },
   watch: {
+    empresa_nome(novoNome) {
+      this.slug = this.gerarSlug(novoNome);
+    },
     menuMainOpen(newVal) {
       localStorage.setItem("menuMainOpen", JSON.stringify(newVal));
     },
@@ -68,6 +73,16 @@ new Vue({
         .replace(/\s+/g, "-")
         .replace(/[^\w\-]+/g, "")
         .replace(/\-\-+/g, "-");
+    },
+    gerarSlug(texto) {
+      return texto
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-");
     },
     toggleMenu() {
       this.showMenu = !this.showMenu;

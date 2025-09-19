@@ -54,6 +54,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
           data: '" . htmlspecialchars($row['data']) . "',
           descricao: '" . htmlspecialchars($row['descricao']) . "',
           telefone: '" . htmlspecialchars($row['telefone']) . "',
+          responsavel: '" . htmlspecialchars($row['responsavel']) . "',
           cadastrante: '" . htmlspecialchars($row['cadastrante_nome']) . "',
           cadastrante_imagem: '" . htmlspecialchars($row['cadastrante_imagem']) . "'
         })\">";
@@ -77,7 +78,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
   <div class="modal-content" @click.stop>
     <span class="close" @click="modalAberto = false"><span>&times;</span></span>
     <h2>{{ empresaSelecionada.empresa_nome }}</h2>
-    <p><strong>Página:</strong> <a href="empresas/pagina-empresa.php">
+    <p><strong>Ver Página:</strong> <a :href="`${window.location.origin}/empresas/${slugify(empresaSelecionada.empresa_nome)}.php`" target="_blank">
  {{ `${slugify(empresaSelecionada.empresa_nome)}.php` }}
 </a><br>
   <!-- 
@@ -91,6 +92,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
 </p>
     <p><strong>Descrição:</strong> {{ empresaSelecionada.descricao }}</p>
     <p><img class="phone" src="assets/images/phone.svg" alt="Edit"> <strong>Telefone:</strong> {{ empresaSelecionada.telefone }}</p>
+     <p><strong>Responsável:</strong> {{ empresaSelecionada.responsavel }}</p>
     <p><strong>Cadastrante:</strong> {{ empresaSelecionada.cadastrante }}</p>
     <p><strong>Cadastro:</strong> {{ empresaSelecionada.data }}</p>
     <div class="modal-btns">

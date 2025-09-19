@@ -1,7 +1,7 @@
 <?php
 require '../includes/config.php';
-$nomeEmpresa = basename($_SERVER['PHP_SELF'], ".php");
-$stmt = $conn->prepare("SELECT titulo FROM empresas_sites WHERE slug = ?");
+$nomeEmpresa = "%%nome%%"; 
+$stmt = $conn->prepare("SELECT titulo FROM empresas_sites WHERE nome = ?");
 $stmt->bind_param("s", $nomeEmpresa);
 $stmt->execute();
 $result = $stmt->get_result();

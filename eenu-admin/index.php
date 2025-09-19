@@ -39,7 +39,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
                   class="globe"
                 />
                 <p class="p-site"><b>Site:</b> eenu.com.br</p>
-                <a href="#"
+                <a href="editar-site.php"
                   >Editar Site <img :src="darkMode ? 'assets/images/edit.svg' : 'assets/images/edit-dark.svg'" alt="edit"
                 /></a>
               </header>

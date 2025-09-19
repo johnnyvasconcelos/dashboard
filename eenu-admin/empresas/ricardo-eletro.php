@@ -1,7 +1,7 @@
 <?php
 require '../includes/config.php';
 $nomeEmpresa = basename($_SERVER['PHP_SELF'], ".php");
-$stmt = $conn->prepare("SELECT titulo FROM empresas_sites WHERE slug = ?");
+$stmt = $conn->prepare("SELECT * FROM empresas_sites WHERE slug = ?");
 $stmt->bind_param("s", $nomeEmpresa);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -47,7 +47,7 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
         <div class="container">
           <div class="title-area">
             <h2 class="h1-subtitle">Bem-Vindo(a) ao</h2>
-            <h1 id="typewriter"><?php echo $titulo; ?></h1>
+            <h1 id="typewriter"><?php echo $nomeEmpresa; ?></h1>
             <button class="title-btn">saiba mais</button>
           </div>
         </div>

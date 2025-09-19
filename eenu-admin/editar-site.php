@@ -6,7 +6,6 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -16,7 +15,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
     <link rel="stylesheet" href="assets/style/form.css" />
     <script src="assets/scripts/vue.min.js"></script>
     <script src="assets/scripts/script.js" defer></script>
-    <title>Cadastrar Empresa - Dashboard EENU</title>
+    <title>Editar Página - Dashboard EENU</title>
   </head>
   <body>
     <div id="app">
@@ -27,12 +26,12 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
           <?php require 'includes/header.php'; ?>
             <div class="main">
             <div class="form-area">
-            <h1>Cadastrar Empresa</h1>
+            <h1>Editar Página</h1>
             <form method="POST" action="actions/cadastrar_empresa.php">
               <div class="inputs">
                 <div class="input">
-              <label for="empresa_nome">Nome Empresa</label>
-              <input v-model="empresa_nome" name="empresa_nome">
+              <label for="name">Nome Empresa</label>
+              <input name="empresa_nome">
               </div>
               <div class="input">
               <label>Responsável</label>
@@ -46,10 +45,10 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
 
               <div class="inputs">
                 <div class="input">
-              <label for="torre">Torre</label>
+              <label for="name">Torre</label>
               <select name="torre">
-                <option value="Torre A">Torre A</option>
-                <option value="Torre B">Torre B</option>
+                <option value="Torre 1">Torre 1</option>
+                <option value="Torre 2">Torre 2</option>
               </select>
               </div>
               <div class="input">
@@ -70,7 +69,6 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
               <textarea name="descricao"></textarea>
               <div style="display:none">
               <!-- cadastrante = usuário logado -->
-               <input name="slug" v-model="slug" type="text" readonly>
               <input name="cadastrante_nome" value="<?php echo htmlspecialchars($row['nome']); ?>">
               <input name="cadastrante_imagem" value="<?php echo htmlspecialchars($row['foto']); ?>">
               <input name="data" value="">
