@@ -1,5 +1,5 @@
 <?php
-require '../includes/config.php';
+require '../eenu-admin/includes/config.php';
 $nomeEmpresa = basename($_SERVER['PHP_SELF'], ".php");
 $nomeEmpresaFormatado = ucwords(str_replace('-', ' ', strtolower($nomeEmpresa)));
 $stmt = $conn->prepare("SELECT titulo FROM empresas_sites WHERE slug = ?");
@@ -43,7 +43,7 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
           </div>
         </div>
       </nav>
-      <header class="header">
+      <header class="header" style="background-image: url(assets/images/header.webp);">
         <div class="container">
           <div class="title-area">
             <h2 class="h1-subtitle">Bem-Vindo(a) ao</h2>
@@ -145,7 +145,7 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
       </section>
       <section class="cta">
         <div class="container">
-          <p>Crie designs que impressionam. Vamos começar?</p>
+          <p>Confiança que gera resultados. Vamos começar?</p>
           <a href="#" class="cta-btn">Contato</a>
         </div>
       </section>

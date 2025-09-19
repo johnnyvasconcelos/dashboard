@@ -78,7 +78,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
   <div class="modal-content" @click.stop>
     <span class="close" @click="modalAberto = false"><span>&times;</span></span>
     <h2>{{ empresaSelecionada.empresa_nome }}</h2>
-    <p><strong>Ver Página:</strong> <a :href="`${window.location.origin}/empresas/${slugify(empresaSelecionada.empresa_nome)}.php`" target="_blank">
+    <p><strong>Ver Página:</strong> <a :href="`${window.location.origin}/empresa/${slugify(empresaSelecionada.empresa_nome)}.php`" target="_blank">
  {{ `${slugify(empresaSelecionada.empresa_nome)}.php` }}
 </a><br>
   <!-- 

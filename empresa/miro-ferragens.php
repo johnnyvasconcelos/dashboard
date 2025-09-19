@@ -1,6 +1,7 @@
 <?php
-require '../includes/config.php';
+require '../eenu-admin/includes/config.php';
 $nomeEmpresa = basename($_SERVER['PHP_SELF'], ".php");
+$nomeEmpresaFormatado = ucwords(str_replace('-', ' ', strtolower($nomeEmpresa)));
 $stmt = $conn->prepare("SELECT titulo FROM empresas_sites WHERE slug = ?");
 $stmt->bind_param("s", $nomeEmpresa);
 $stmt->execute();
@@ -13,10 +14,9 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EENU - Studio Prisma</title>
     <link rel="stylesheet" href="./assets/style/css.css" />
     <script src="./assets/javascript/menu.js" defer></script>
-    <title>EENU - <?php echo $nomeEmpresa; ?></title>
+    <title>EENU - <?php echo $nomeEmpresaFormatado; ?></title>
   </head>
   <body>
     <div class="wrapper">
@@ -32,18 +32,18 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
             <li><a href="#">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#equipe">Equipe</a></li>
-            <li><a href="#gallery">Galeria</a></li>
+            <li><a href="#gallery">Portfólio</a></li>
             <li><a href="#contact">Contato</a></li>
             <p class="copy">Studio Prisma - Todos os Direitos Reservados.</p>
           </ul>
           <div class="menu-overlay"></div>
-          <a class="nav-btn" href="#gallery"><span>Portfólio</span></a>
+          <a class="nav-btn" href="#gallery"><span>Galeria</span></a>
           <div class="mob-btn">
             <span class="pipe"></span>
           </div>
         </div>
       </nav>
-      <header class="header">
+      <header class="header" style="background-image: url(assets/images/header.webp);">
         <div class="container">
           <div class="title-area">
             <h2 class="h1-subtitle">Bem-Vindo(a) ao</h2>
@@ -66,7 +66,7 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
               <a href="#" class="btn">saiba mais</a>
             </div>
           </div>
-          <div class="image"></div>
+          <div class="image" style="background-image: url(assets/images/author.webp);"></div>
         </div>
       </section>
       <section class="method">
@@ -111,7 +111,7 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
       </section>
       <section class="galeria" id="gallery">
         <div class="container">
-          <h2>Galeria de Eventos</h2>
+          <h2>Galeria de Projetos</h2>
           <div class="carrossel-area"></div>
         </div>
       </section>
@@ -145,7 +145,7 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
       </section>
       <section class="cta">
         <div class="container">
-          <p>Crie designs que impressionam. Vamos começar?</p>
+          <p>Confiança que gera resultados. Vamos começar?</p>
           <a href="#" class="cta-btn">Contato</a>
         </div>
       </section>
@@ -230,7 +230,7 @@ $titulo = $dados['titulo'] ?? "Empresa não encontrada";
     </div>
     <script>
         const el = document.getElementById("typewriter");
-const texts = ["<?php echo $titulo; ?>", "Moda Expert"];
+const texts = ["<?php echo $nomeEmpresaFormatado; ?>", "<?php echo $titulo; ?>"];
 let i = 0;
 let j = 0;
 let current = "";
@@ -297,11 +297,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// === JS para mover o carrossel ===
 document.addEventListener("DOMContentLoaded", () => {
   const area = document.querySelector(".carrossel-area");
 
-  // Criar estrutura
   area.innerHTML = `
     <button class="carrossel-control prev">&laquo;</button>
     <div class="carrossel-track">

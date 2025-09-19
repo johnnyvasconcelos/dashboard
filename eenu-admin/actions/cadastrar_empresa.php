@@ -13,8 +13,8 @@ function formatarNomeArquivo($nome) {
 
 function criarArquivoEmpresa($nomeEmpresa, $dadosEmpresa) {
     $nomeArquivo = formatarNomeArquivo($nomeEmpresa);
-    $caminhoArquivo = "../empresas/{$nomeArquivo}.php";
-    $templatePath = "../empresas/pagina-empresa.php";
+    $caminhoArquivo = "../../empresa/{$nomeArquivo}.php";
+    $templatePath = "../../empresa/pagina-empresa.php";
     if (!file_exists($templatePath)) {
         throw new Exception("Template pagina-empresa.php não encontrado!");
     }
@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $nomeArquivoCriado = criarArquivoEmpresa($empresa_nome, $dadosEmpresa);
             
             echo "Empresa cadastrada com sucesso! Arquivo criado: " . $nomeArquivoCriado;
-            header("Location: ../empresas.php");
+            header("Location: ../../eenu-admin/empresas.php");
             exit;
         } catch (Exception $e) {
             echo "Empresa cadastrada, mas erro ao criar arquivo: " . $e->getMessage();

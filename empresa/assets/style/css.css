@@ -82,7 +82,6 @@ h2 {
 
 .header {
   position: relative;
-  background-image: url("../images/header.webp");
   background-size: cover;
   background-position: center center;
   height: 700px;
@@ -990,5 +989,10 @@ form button:hover {
   .mob-btn {
     width: 45px;
     height: 45px;
+  }
+  .about .text p,
+  .team .container .title p,
+  .icones-area .container p {
+    font-size: 16px;
   }
 }
