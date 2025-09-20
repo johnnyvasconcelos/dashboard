@@ -12,6 +12,7 @@ new Vue({
     currentPath: window.location.pathname.split("/").pop(),
     empresaSelecionada: {
       empresa_nome: "<?php echo addslashes($empresa['empresa_nome']); ?>",
+      slug: "<?php echo $empresa['slug']; ?>",
     },
     hoverItem: null,
     menuMainOpen: true,

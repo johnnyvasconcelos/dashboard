@@ -54,6 +54,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
           empresa_nome: '" . htmlspecialchars($row['empresa_nome']) . "',
           data: '" . htmlspecialchars($row['data']) . "',
           descricao: '" . htmlspecialchars($row['descricao']) . "',
+          slug: '" . htmlspecialchars($row['slug']) . "',
           telefone: '" . htmlspecialchars($row['telefone']) . "',
           responsavel: '" . htmlspecialchars($row['responsavel']) . "',
           cadastrante: '" . htmlspecialchars($row['cadastrante_nome']) . "',
@@ -79,11 +80,12 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
   <div class="modal-content" @click.stop>
     <span class="close" @click="modalAberto = false"><span>&times;</span></span>
     <h2>{{ empresaSelecionada.empresa_nome }}</h2>
-    <p><strong>Ver Página: <a :href="`${window.location.origin}/empresa/${slugify(empresaSelecionada.empresa_nome)}.php`" target="_blank" style="text-decoration: underline;">
- {{ `${slugify(empresaSelecionada.empresa_nome)}.php` }}
+    <p><strong>Ver Página: 
+    <a :href="'../empresa/' + empresaSelecionada.slug + '.php'" target="_blank" style="text-decoration: underline;">
+ {{ empresaSelecionada.slug }}.php
 </a></strong><br>
 <div class="flex">
-<a :href="`${window.location.origin}/eenu-admin/editar-${slugify(empresaSelecionada.empresa_nome)}.php`" class="edit-btn">Editar página <img src="assets/images/edit-dark.svg" alt="Edit"></a>
+<a :href="'editar-' + empresaSelecionada.slug + '.php'" class="edit-btn">Editar página <img src="assets/images/edit-dark.svg" alt="Edit"></a>
 </div>
 </p>
     <p><strong>Descrição:</strong> {{ empresaSelecionada.descricao }}</p>
