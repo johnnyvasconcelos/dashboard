@@ -56,30 +56,93 @@ require './includes/config.php';
                   <label for="sobre-1">Sobre a equipe</label>
                   <textarea name="sobre-3" id=""></textarea>
                 </div>
-                  -profissional_1_titulo
-                  -profissional_2_titulo
-                  -profissional_3_titulo
-                  -profissional_1_texto
-                  -profissional_2_texto
-                  -profissional_3_texto
-                  -profissional_1_imagem
-                  -profissional_2_imagem
-                  -profissional_3_imagem
+                <div class="inputs">
+              <div class="input">
+                <img src="#"/>
+                <input type="file" name="profissional_1_imagem">
+                <label for="profissional_1_titulo">1 Profissional</label>
+                <input type="text" name="profissional_1_titulo">
+                <input type="text" name="profissional_1_texto">
+              </div>
+              <div class="input">
+                <img src="#"/>
+                <input type="file" name="profissional_2_imagem">
+                <label for="profissional_2_titulo">1 Profissional</label>
+                <input type="text" name="profissional_2_titulo">
+                <input type="text" name="profissional_2_texto">
+              </div>
+              <div class="input">
+                <img src="#"/>
+                <input type="file" name="profissional_3_imagem">
+                <label for="profissional_3_titulo">1 Profissional</label>
+                <input type="text" name="profissional_3_titulo">
+                <input type="text" name="profissional_3_texto">
+              </div>
+              </div>
               <h3>informações extras</h3>
-                  -metodo_1_titulo
-                  -metodo_1_texto
-                  -metodo_2_titulo
-                  -metodo_2_texto
-                  -metodo_3_titulo
-                  -metodo_3_texto
-                  -metodo_4_titulo
-                  -metodo_4_texto
+              
               <h3>galeria</h3>
-                  -foto_1
-                  -foto_2
-                  -foto_3
-                  -foto_4
-                  -foto_5
+              <div class="inputs">
+                <div class="input">
+                  <label for="foto_1">
+                    <p>Foto 1</p>
+                    <img src="#" alt="foto_1"/>
+                    <input type="file">
+                  </label>
+                </div>
+                <div class="input">
+                  <label for="foto_2">
+                    <p>Foto 2</p>
+                    <img src="#" alt="foto_2"/>
+                    <input type="file">
+                  </label>
+                </div>
+                <div class="input">
+                  <label for="foto_3">
+                    <p>Foto 3</p>
+                    <img src="#" alt="foto_3"/>
+                    <input type="file">
+                  </label>
+                </div>
+                <div class="input">
+                  <label for="foto_4">
+                    <p>Foto 4</p>
+                    <img src="#" alt="foto_4"/>
+                    <input type="file">
+                  </label>
+                </div>
+                <div class="input">
+                  <label for="foto_5">
+                    <p>Foto 5</p>
+                    <img src="#" alt="foto_5"/>
+                    <input type="file">
+                  </label>
+                </div>
+              </div>
+              <h3>sessão de cards</h3>
+
+              <div class="inputs">
+                <div class="input">
+                  <label for="">Card 1</label>
+                  <input type="text" name="metodo_1_titulo">
+                  <input type="text" name="metodo_1_texto">
+                </div>
+                <div class="input">
+                  <label for="">Card 2</label>
+                  <input type="text" name="metodo_2_titulo">
+                  <input type="text" name="metodo_2_texto">
+                </div>
+                <div class="input">
+                  <label for="">Card 3</label>
+                  <input type="text" name="metodo_3_titulo">
+                  <input type="text" name="metodo_3_texto">
+                </div>
+                <div class="input">
+                  <label for="">Card 4</label>
+                  <input type="text" name="metodo_4_titulo">
+                  <input type="text" name="metodo_4_texto">
+                </div>
+              </div>
               <h3>sessão de ícones</h3>
                   -sobre_2
                   -icone_card_1
@@ -94,55 +157,6 @@ require './includes/config.php';
                  
 
 
-    <div class="inputs">
-      <div class="input">
-        <label for="name">Nome Empresa</label>
-        <input type="text" name="empresa_nome" value="<?php echo htmlspecialchars($empresa['empresa_nome']); ?>" required>
-      </div>
-      <div class="input">
-        <label>Responsável</label>
-        <input name="responsavel" value="<?php echo htmlspecialchars($empresa['responsavel']); ?>">
-      </div>
-      <div class="input">
-        <label>Telefone</label>
-        <input name="telefone" type="tel" 
-       value="<?php echo htmlspecialchars($empresa['telefone'] ?? ''); ?>" 
-       required>
-      </div>
-    </div>
-
-    <div class="inputs">
-      <div class="input">
-        <label for="name">Torre</label>
-        <select name="torre">
-          <option value="Torre 1" <?php echo ($empresa['torre'] == 'Torre 1') ? 'selected' : ''; ?>>Torre 1</option>
-          <option value="Torre 2" <?php echo ($empresa['torre'] == 'Torre 2') ? 'selected' : ''; ?>>Torre 2</option>
-        </select>
-      </div>
-      <div class="input">
-        <label>Andar</label>
-        <select name="andar">
-          <option value="Térreo" <?php echo ($empresa['andar'] == 'Térreo') ? 'selected' : ''; ?>>Térreo</option>
-          <option value="Andar 1" <?php echo ($empresa['andar'] == 'Andar 1') ? 'selected' : ''; ?>>Andar 1</option>
-          <option value="Andar 2" <?php echo ($empresa['andar'] == 'Andar 2') ? 'selected' : ''; ?>>Andar 2</option>
-          <option value="Andar 3" <?php echo ($empresa['andar'] == 'Andar 3') ? 'selected' : ''; ?>>Andar 3</option>
-        </select>
-      </div>
-      <div class="input">
-        <label>N° Sala</label>
-        <input name="numero_sala" type="number" value="<?php echo htmlspecialchars($empresa['numero_sala']); ?>">
-      </div>
-    </div>
-
-    <label>Descrição (opcional)</label>
-    <textarea name="descricao" required><?php echo htmlspecialchars($empresa['descricao']); ?></textarea>
-
-    <div style="display:none">
-      <!-- cadastrante = usuário logado -->
-      <input name="cadastrante_nome" value="<?php echo htmlspecialchars($empresa['cadastrante_nome']); ?>">
-      <input name="cadastrante_imagem" value="<?php echo htmlspecialchars($empresa['cadastrante_imagem']); ?>">
-      <input name="data" value="">
-    </div>
 
     <button type="submit" name="atualizar">
       <span>Salvar</span>
