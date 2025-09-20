@@ -43,6 +43,19 @@
   width: 20%;
 }
 
+.form-area h3 {
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cecece;
+  color: var(--dark-red);
+}
+
+.dark .form-area h3 {
+  border-bottom: 1px dashed var(--border);
+  color: var(--color-4);
+  font-size: 17px;
+}
+
 .form-area input,
 .form-area textarea,
 .form-area select {
@@ -125,6 +138,9 @@
 }
 
 @media (max-width: 560px) {
+  .form-area h3 {
+    font-size: 16px;
+  }
   .form-area h1 {
     font-size: 25px;
     padding: 30px;

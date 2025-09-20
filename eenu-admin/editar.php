@@ -27,14 +27,14 @@ require './includes/config.php';
 
 
 
-              informações gerais
+              <h3>informações gerais</h3>
                   -titulo
                   -email
                   -whatsapp
-              sobre a empresa
+              <h3>sobre a empresa</h3>
                   -sobre_1
                   -foto_sobre(criar)
-              informações extras
+              <h3>informações extras</h3>
                   -metodo_1_titulo
                   -metodo_1_texto
                   -metodo_2_titulo
@@ -43,13 +43,13 @@ require './includes/config.php';
                   -metodo_3_texto
                   -metodo_4_titulo
                   -metodo_4_texto
-              galeria
+              <h3>galeria</h3>
                   -foto_1
                   -foto_2
                   -foto_3
                   -foto_4
                   -foto_5
-              sessão de ícones
+              <h3>sessão de ícones</h3>
                   -sobre_2
                   -icone_card_1
                   -icone_card_2
@@ -60,7 +60,7 @@ require './includes/config.php';
                   -subtitulo_card_1
                   -subtitulo_card_2
                   -subtitulo_card_3
-              nosso time
+              <h3>nosso time</h3>
                   -sobre-3
                   -profissional_1_titulo
                   -profissional_2_titulo
