@@ -719,12 +719,12 @@ form textarea {
   background: transparent;
   font-size: 16px;
   border: 1px solid white;
+  color: white !important;
 }
 
 form textarea:focus {
   outline: none;
   border: 1px solid #d12c23;
-  color: white;
 }
 
 form button {

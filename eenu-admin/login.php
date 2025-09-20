@@ -2,6 +2,17 @@
 session_start();
 require 'includes/config.php';
 
+if (isset($_SESSION['usuario_id'])) {
+    header('Location: index.php');
+    exit;
+}
+
+if (isset($_COOKIE['usuario_id'])) {
+    $_SESSION['usuario_id'] = $_COOKIE['usuario_id'];
+    header('Location: index.php');
+    exit;
+}
+
 $erro = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

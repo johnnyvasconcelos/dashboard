@@ -69,7 +69,7 @@
               <div class="extra-nav" style="transform: translateY(15px)">
                 <div class="extra-cell">
                   <!-- Quik Search -->
-                  <a class="search-link" id="quik-search-btn" href="login.html">
+                  <a class="search-link" id="quik-search-btn" href="./eenu-admin/login.php">
                     <img
                       src="./images/user.png"
                       alt="user png icon"
@@ -160,7 +160,7 @@
                     </ul>
                   </li>
                   <li><a href="#">Contato</a></li>
-                  <li><a href="./login.html">Login</a></li>
+                  <li><a href="./eenu-admin/login.php">Login</a></li>
                 </ul>
                 <div class="dz-social-icon">
                   <ul>
