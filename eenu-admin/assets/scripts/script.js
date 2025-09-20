@@ -8,6 +8,25 @@ new Vue({
     showPassword: false,
     empresa_nome: "",
     slug: "",
+    showModal: false,
+    currentCard: null,
+    icons: [
+      "icon-1.svg",
+      "icon-2.svg",
+      "icon-3.svg",
+      "icon-4.svg",
+      "icon-5.svg",
+      "icon-6.svg",
+      "icon-7.svg",
+      "icon-8.svg",
+      "icon-9.svg",
+      "icon-10.svg",
+      "icon-11.svg",
+      "icon-12.svg",
+    ],
+    card1: { icon: "#", title: "", subtitle: "" },
+    card2: { icon: "#", title: "", subtitle: "" },
+    card3: { icon: "#", title: "", subtitle: "" },
     is976: window.innerWidth <= 976,
     currentPath: window.location.pathname.split("/").pop(),
     empresaSelecionada: {
@@ -132,6 +151,19 @@ new Vue({
       return this.darkMode
         ? `./assets/images/${name}.svg`
         : `./assets/images/${name}-dark.svg`;
+    },
+    openModal(card) {
+      this.currentCard = card;
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+    },
+    selectIcon(icon) {
+      if (this.currentCard && this[this.currentCard]) {
+        this[this.currentCard].icon = icon;
+      }
+      this.closeModal();
     },
   },
 });

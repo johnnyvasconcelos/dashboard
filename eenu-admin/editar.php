@@ -24,9 +24,6 @@ require './includes/config.php';
             <div class="form-area">
             <h1>Editar Site</h1>
              <form method="POST" action="editar-empresa.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
-
-
-
               <h3>informações gerais</h3>
               <div class="input">
                 <img src="#" alt="cabeçalho imagem"/>
@@ -153,31 +150,53 @@ require './includes/config.php';
                 <textarea name="sobre_2" id=""></textarea>
               </div>
               <div class="inputs">
-                <div class="input">
-                  <img src="#" alt="">
-                  <label for="">Ícone 1</label>
-                  <a href="#" class="btn-icones">selecionar ícone</a>
-                  <input type="text" name="icone_card_1" style="display:none">
-                  <input type="text" name="titulo_card_1">
-                  <input type="text" name="subtitulo_card_1">
-                </div>
-                <div class="input">
-                  <img src="#" alt="">
-                  <label for="">Ícone 2</label>
-                  <a href="#" class="btn-icones">selecionar ícone</a>
-                  <input type="text" name="icone_card_2" style="display:none">
-                  <input type="text" name="titulo_card_2">
-                  <input type="text" name="subtitulo_card_2">
-                </div>
-                <div class="input">
-                  <img src="#" alt="">
-                  <label for="">Ícone 3</label>
-                  <a href="#" class="btn-icones">selecionar ícone</a>
-                  <input type="text" name="icone_card_3" style="display:none">
-                  <input type="text" name="titulo_card_3">
-                  <input type="text" name="subtitulo_card_3">
-                </div>
-              </div>
+    <!-- Input 1 -->
+    <div class="input">
+      <img :src="card1.icon" alt="" width="50">
+      <label>Ícone 1</label>
+      <a href="#" class="btn-icones" @click.prevent="openModal('card1')">selecionar ícone</a>
+      <input type="text" name="icone_card_1" v-model="card1.icon" style="display:none">
+      <input type="text" name="titulo_card_1" v-model="card1.title">
+      <input type="text" name="subtitulo_card_1" v-model="card1.subtitle">
+    </div>
+
+    <!-- Input 2 -->
+    <div class="input">
+      <img :src="card2.icon" alt="" width="50">
+      <label>Ícone 2</label>
+      <a href="#" class="btn-icones" @click.prevent="openModal('card2')">selecionar ícone</a>
+      <input type="text" name="icone_card_2" v-model="card2.icon" style="display:none">
+      <input type="text" name="titulo_card_2" v-model="card2.title">
+      <input type="text" name="subtitulo_card_2" v-model="card2.subtitle">
+    </div>
+
+    <!-- Input 3 -->
+    <div class="input">
+      <img :src="card3.icon" alt="" width="50">
+      <label>Ícone 3</label>
+      <a href="#" class="btn-icones" @click.prevent="openModal('card3')">selecionar ícone</a>
+      <input type="text" name="icone_card_3" v-model="card3.icon" style="display:none">
+      <input type="text" name="titulo_card_3" v-model="card3.title">
+      <input type="text" name="subtitulo_card_3" v-model="card3.subtitle">
+    </div>
+</div>
+
+     <div v-if="showModal" class="modal">
+    <div class="modal-content">
+      <h3>Selecione um ícone</h3>
+      <div class="icons-grid">
+        <img 
+          v-for="(icon, i) in icons" 
+          :key="i" 
+          :src="icon" 
+          width="40"
+          @click="selectIcon(icon)"
+          style="cursor:pointer; margin:5px"
+        >
+      </div>
+      <button @click="closeModal">Fechar</button>
+    </div>
+  </div>
               <button type="submit" name="atualizar">
                 <span>Salvar</span>
                 <img src="assets/images/save.svg" alt="save svg" />
