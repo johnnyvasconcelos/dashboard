@@ -84,7 +84,7 @@
           </div>
         </div>
       </nav>
-      <header class="header" style="background-image: url(assets/images/header.webp);">
+      <header class="header" style="background-image: url(assets/images/<?php echo $fotoCabecalho ?>);">
         <div class="container">
           <div class="title-area">
             <h2 class="h1-subtitle">Bem-Vindo(a) ao</h2>

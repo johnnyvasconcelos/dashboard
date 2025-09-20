@@ -28,6 +28,11 @@ require './includes/config.php';
 
 
               <h3>informações gerais</h3>
+              <div class="input">
+                <img src="#" alt="cabeçalho imagem"/>
+                <label for="cabecalho">Imagem de Cabeçalho</label>
+                <input type="file" name="foto_cabecalho">
+              </div>
               <div class="inputs">
                 <div class="input">
                   <label for="titulo">Título</label>
@@ -120,7 +125,6 @@ require './includes/config.php';
                 </div>
               </div>
               <h3>sessão de cards</h3>
-
               <div class="inputs">
                 <div class="input">
                   <label for="">Card 1</label>
@@ -144,25 +148,41 @@ require './includes/config.php';
                 </div>
               </div>
               <h3>sessão de ícones</h3>
-                  -sobre_2
-                  -icone_card_1
-                  -icone_card_2
-                  -icone_card_3
-                  -titulo_card_1 
-                  -titulo_card_2 
-                  -titulo_card_3
-                  -subtitulo_card_1
-                  -subtitulo_card_2
-                  -subtitulo_card_3
-                 
-
-
-
-    <button type="submit" name="atualizar">
-      <span>Salvar</span>
-      <img src="assets/images/save.svg" alt="save svg" />
-    </button>
-  </form>
+              <div class="input">
+                <label for="sobre_2">Mais sobre a empresa</label>
+                <textarea name="sobre_2" id=""></textarea>
+              </div>
+              <div class="inputs">
+                <div class="input">
+                  <img src="#" alt="">
+                  <label for="">Ícone 1</label>
+                  <a href="#" class="btn-icones">selecionar ícone</a>
+                  <input type="text" name="icone_card_1" style="display:none">
+                  <input type="text" name="titulo_card_1">
+                  <input type="text" name="subtitulo_card_1">
+                </div>
+                <div class="input">
+                  <img src="#" alt="">
+                  <label for="">Ícone 2</label>
+                  <a href="#" class="btn-icones">selecionar ícone</a>
+                  <input type="text" name="icone_card_2" style="display:none">
+                  <input type="text" name="titulo_card_2">
+                  <input type="text" name="subtitulo_card_2">
+                </div>
+                <div class="input">
+                  <img src="#" alt="">
+                  <label for="">Ícone 3</label>
+                  <a href="#" class="btn-icones">selecionar ícone</a>
+                  <input type="text" name="icone_card_3" style="display:none">
+                  <input type="text" name="titulo_card_3">
+                  <input type="text" name="subtitulo_card_3">
+                </div>
+              </div>
+              <button type="submit" name="atualizar">
+                <span>Salvar</span>
+                <img src="assets/images/save.svg" alt="save svg" />
+              </button>
+            </form>
             </div>      
             </div>
         </main>

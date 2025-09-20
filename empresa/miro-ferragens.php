@@ -45,7 +45,8 @@
   $profissional2Texto = $dados['profissional_2_texto'] ?? 'Um profissional dedicado, comprometido com resultados e sempre atento aos detalhes. Atua com seriedade, ética e busca constante por melhorias, oferecendo um atendimento de qualidade e soluções eficientes para cada desafio.';
   $profissional3Texto = $dados['profissional_3_texto'] ?? 'Um profissional dedicado, comprometido com resultados e sempre atento aos detalhes. Atua com seriedade, ética e busca constante por melhorias, oferecendo um atendimento de qualidade e soluções eficientes para cada desafio.';
   $slug = $dados['slug'];
-  $fotoSobre = $dados['foto_sobre']
+  $fotoSobre = $dados['foto_sobre'];
+  $fotoCabecalho = $dados['foto_cabecalho'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -84,7 +85,7 @@
           </div>
         </div>
       </nav>
-      <header class="header" style="background-image: url(assets/images/header.webp);">
+      <header class="header" style="background-image: url(assets/images/<?php echo $fotoCabecalho ?>);">
         <div class="container">
           <div class="title-area">
             <h2 class="h1-subtitle">Bem-Vindo(a) ao</h2>
