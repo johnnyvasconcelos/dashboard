@@ -11,7 +11,7 @@ require './includes/config.php';
     <link rel="icon" href="assets/images/favicon.webp" type="image/x-icon">
     <script src="assets/scripts/vue.min.js"></script>
     <script src="assets/scripts/script.js" defer></script>
-    <title>Editar Empresa - Dashboard EENU</title>
+    <title>Editar Site - Dashboard EENU</title>
   </head>
   <body>
     <div id="app">
@@ -22,8 +22,57 @@ require './includes/config.php';
           <?php require 'includes/header.php'; ?>
             <div class="main">
             <div class="form-area">
-            <h1>Editar Empresa</h1>
+            <h1>Editar Site</h1>
              <form method="POST" action="editar-empresa.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
+
+
+
+              informações gerais
+                  -titulo
+                  -email
+                  -whatsapp
+              sobre a empresa
+                  -sobre_1
+                  -foto_sobre(criar)
+              informações extras
+                  -metodo_1_titulo
+                  -metodo_1_texto
+                  -metodo_2_titulo
+                  -metodo_2_texto
+                  -metodo_3_titulo
+                  -metodo_3_texto
+                  -metodo_4_titulo
+                  -metodo_4_texto
+              galeria
+                  -foto_1
+                  -foto_2
+                  -foto_3
+                  -foto_4
+                  -foto_5
+              sessão de ícones
+                  -sobre_2
+                  -icone_card_1
+                  -icone_card_2
+                  -icone_card_3
+                  -titulo_card_1 
+                  -titulo_card_2 
+                  -titulo_card_3
+                  -subtitulo_card_1
+                  -subtitulo_card_2
+                  -subtitulo_card_3
+              nosso time
+                  -sobre-3
+                  -profissional_1_titulo
+                  -profissional_2_titulo
+                  -profissional_3_titulo
+                  -profissional_1_texto
+                  -profissional_2_texto
+                  -profissional_3_texto
+                  -profissional_1_imagem
+                  -profissional_2_imagem
+                  -profissional_3_imagem
+
+
     <div class="inputs">
       <div class="input">
         <label for="name">Nome Empresa</label>
