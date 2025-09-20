@@ -52,6 +52,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/style/css.css" />
+    <link rel="icon" href="./assets/images/favicon.webp" type="image/x-icon">
     <script src="./assets/javascript/menu.js" defer></script>
     <title>EENU - <?php echo $nomeEmpresaFormatado; ?></title>
   </head>

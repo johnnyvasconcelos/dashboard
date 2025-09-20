@@ -98,7 +98,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'slug' => $slug
             ];
             $nomeArquivoCriado = criarArquivoEmpresa($empresa_nome, $dadosEmpresa);
-            
+            $origemEditar = "../editar.php";
+            $destinoEditar = "../editar-{$slug}.php";
+            if (file_exists($origemEditar)) {
+                if (!copy($origemEditar, $destinoEditar)) {
+                    throw new Exception("Erro ao clonar editar.php!");
+                }
+            }
             echo "Empresa cadastrada com sucesso! Arquivo criado: " . $nomeArquivoCriado;
             header("Location: ../../eenu-admin/empresas.php");
             exit;

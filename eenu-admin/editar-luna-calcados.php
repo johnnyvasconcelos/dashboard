@@ -1,44 +1,5 @@
 <?php
 require './includes/config.php';
-$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
-$sql = "SELECT * FROM empresas WHERE id = $id LIMIT 1";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    $empresa = $result->fetch_assoc();
-} else {
-    die("Empresa não encontrada.");
-}
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['atualizar'])) {
-    $empresa_nome      = $conn->real_escape_string($_POST['empresa_nome']);
-    $responsavel       = $conn->real_escape_string($_POST['responsavel']);
-    $telefone    = $conn->real_escape_string($_POST['telefone']);
-    $torre             = $conn->real_escape_string($_POST['torre']);
-    $andar             = $conn->real_escape_string($_POST['andar']);
-    $numero_sala       = $conn->real_escape_string($_POST['numero_sala']);
-    $descricao         = $conn->real_escape_string($_POST['descricao']);
-    $cadastrante_nome  = $conn->real_escape_string($_POST['cadastrante_nome']);
-    $cadastrante_imagem= $conn->real_escape_string($_POST['cadastrante_imagem']);
-    $data              = date("Y-m-d H:i:s");
-    $sqlUpdate = "UPDATE empresas 
-                  SET empresa_nome='$empresa_nome',
-                      responsavel='$responsavel',
-                      telefone='$telefone',
-                      torre='$torre',
-                      andar='$andar',
-                      numero_sala='$numero_sala',
-                      descricao='$descricao',
-                      cadastrante_nome='$cadastrante_nome',
-                      cadastrante_imagem='$cadastrante_imagem',
-                      data='$data'
-                  WHERE id=$id";
-    if ($conn->query($sqlUpdate)) {
-        echo "<p style='color:green'>Empresa atualizada com sucesso!</p>";
-        $sql = "SELECT * FROM empresas WHERE id = $id LIMIT 1";
-        $empresa = $conn->query($sql)->fetch_assoc();
-    } else {
-        echo "<p style='color:red'>Erro ao atualizar: " . $conn->error . "</p>";
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

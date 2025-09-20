@@ -14,6 +14,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
     <title>Modelo Dashboard EENU</title>
     <link rel="stylesheet" href="./assets/style/style.css" />
     <link rel="stylesheet" href="assets/style/table.css" />
+    <link rel="icon" href="assets/images/favicon.webp" type="image/x-icon">
     <script src="./assets/scripts/vue.min.js"></script>
     <script src="./assets/scripts/script.js" defer></script>
   </head>
@@ -82,7 +83,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
  {{ `${slugify(empresaSelecionada.empresa_nome)}.php` }}
 </a></strong><br>
 <div class="flex">
-<a :href="`${window.location.origin}/eedu-admin/editar-${slugify(empresaSelecionada.empresa_nome)}.php`" class="edit-btn">Editar página <img src="assets/images/edit-dark.svg" alt="Edit"></a>
+<a :href="`${window.location.origin}/eenu-admin/editar-${slugify(empresaSelecionada.empresa_nome)}.php`" class="edit-btn">Editar página <img src="assets/images/edit-dark.svg" alt="Edit"></a>
 </div>
 </p>
     <p><strong>Descrição:</strong> {{ empresaSelecionada.descricao }}</p>

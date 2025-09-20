@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/style/login.css">
         <link rel="stylesheet" href="assets/style/style.css" />
+        <link rel="icon" href="assets/images/favicon.webp" type="image/x-icon">
         <script src="./assets/scripts/vue.min.js"></script>
         <script src="./assets/scripts/script.js" defer></script>
         <title>Login - Eenu</title>

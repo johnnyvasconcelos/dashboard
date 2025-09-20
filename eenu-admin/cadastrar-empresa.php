@@ -6,7 +6,6 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -14,6 +13,7 @@ if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/style/style.css" />
     <link rel="stylesheet" href="assets/style/form.css" />
+    <link rel="icon" href="assets/images/favicon.webp" type="image/x-icon">
     <script src="assets/scripts/vue.min.js"></script>
     <script src="assets/scripts/script.js" defer></script>
     <title>Cadastrar Empresa - Dashboard EENU</title>
