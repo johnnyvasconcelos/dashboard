@@ -129,6 +129,10 @@
   background-color: var(--color-4);
 }
 
+[v-cloak] {
+  display: none !important;
+}
+
 .modal {
   position: fixed;
   top: 0;

@@ -1,5 +1,10 @@
 <?php
-require './includes/config.php';
+session_start();
+require 'includes/config.php';
+if (!isset($_SESSION['usuario_id']) && !isset($_COOKIE['usuario_id'])) {
+    header('Location: login.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -181,7 +186,7 @@ require './includes/config.php';
     </div>
 </div>
 
-     <div v-if="showModal" class="modal">
+     <div v-cloak v-if="showModal" class="modal">
     <div class="modal-content">
       <h3>Selecione um ícone</h3>
       <div class="icons-grid">
