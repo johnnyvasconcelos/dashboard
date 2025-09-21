@@ -13,6 +13,42 @@ $stmt->bind_param("s", $slug);
 $stmt->execute();
 $result = $stmt->get_result();
 $empresa = $result->fetch_assoc();
+
+
+if (isset($_POST['atualizar'])) {
+    $titulo = $_POST['titulo'];
+    $email = $_POST['email'];
+    $whatsapp = $_POST['whatsapp'];
+    $pastaDestino = '../empresa/assets/images/';
+    if (!empty($_FILES['foto_cabecalho']['name'])) {
+        $arquivo = $_FILES['foto_cabecalho'];
+        if ($arquivo['size'] > 200 * 1024) {
+            echo "<p>Arquivo muito grande! Máx 200KB.</p>";
+            exit;
+        }
+        $extensao = pathinfo($arquivo['name'], PATHINFO_EXTENSION);
+        $nomeArquivo = 'header-' . $slug . '.' . $extensao;
+        $caminhoCompleto = $pastaDestino . $nomeArquivo;
+        if (!move_uploaded_file($arquivo['tmp_name'], $caminhoCompleto)) {
+            echo "<p>Erro ao enviar arquivo!</p>";
+            exit;
+        }
+        $foto_cabecalho = $nomeArquivo;
+    } else {
+        $foto_cabecalho = $empresa['foto_cabecalho'];
+    }
+    $sql = "UPDATE empresas_sites SET titulo = ?, email = ?, whatsapp = ?, foto_cabecalho = ? WHERE slug = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssss", $titulo, $email, $whatsapp, $foto_cabecalho, $slug);
+
+    if ($stmt->execute()) {
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    } else {
+        echo "<p>Erro ao atualizar dados: " . $stmt->error . "</p>";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -36,13 +72,23 @@ $empresa = $result->fetch_assoc();
           <?php require 'includes/header.php'; ?>
             <div class="main">
             <div class="form-area">
+              <?php
+              $protocolo = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' 
+                            || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+              $host = $_SERVER['HTTP_HOST'];
+              $urlBase = $protocolo . $host;
+              ?>
+              <a href="<?php echo $urlBase . '/empresa/' . $empresa['slug'] . '.php'; ?>" 
+              class="main-slug" target="_blank">
+                Ver Site &#128065;
+            </a>
             <h1>Editar Site</h1>
-             <form method="POST" class="editar-empresa" action="editar-empresa.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
+             <form method="POST" class="editar-empresa" enctype="multipart/form-data" enctype="multipart/form-data">
               <h3>informações gerais</h3>
               <div class="inputs inputs-1">
               <div class="input input-image">
                 <label class="label-img" for="foto_cabecalho"><img src="../empresa/assets/images/<?php echo $empresa['foto_cabecalho']; ?>" alt="cabeçalho imagem"/></label>
-                <input type="file" name="foto_cabecalho">
+                <input type="file" name="foto_cabecalho" accept="image/*">
               </div>
                <div class="inputs-column">
                 <div class="input">
@@ -167,30 +213,30 @@ $empresa = $result->fetch_assoc();
               <div class="inputs inputs-6">
     <!-- Input 1 -->
     <div class="input">
-      <img :src="card1.icon" alt="" width="50">
+      <img :src="card1.icon ? 'assets/images/' + card1.icon : 'assets/images/<?php echo $empresa['icone_card_1']; ?>'"  alt="" width="50">
       <label>Ícone 1</label>
-      <button href="#" class="btn-icones" @click.prevent="openModal('card1')">selecionar ícone</button>
-      <input type="text" name="icone_card_1" v-model="card1.icon" style="display:none">
+      <div class="btn-icones" @click.prevent="openModal('card1')">selecionar ícone</div>
+      <input type="text" name="icone_card_1" style="display:none" v-model="card1.icon">
       <input type="text" name="titulo_card_1" value="<?php echo $empresa['titulo_card_1'];?>" >
       <input type="text" name="subtitulo_card_1" value="<?php echo $empresa['subtitulo_card_1'];?>" >
     </div>
 
     <!-- Input 2 -->
     <div class="input">
-      <img :src="card2.icon" alt="" width="50">
+      <img :src="card2.icon ? 'assets/images/' + card2.icon : 'assets/images/<?php echo $empresa['icone_card_2']; ?>'"  alt="" width="50">
       <label>Ícone 2</label>
-      <button href="#" class="btn-icones" @click.prevent="openModal('card2')">selecionar ícone</button>
-      <input type="text" name="icone_card_2" v-model="card2.icon" style="display:none">
+      <div class="btn-icones" @click.prevent="openModal('card2')">selecionar ícone</div>
+      <input type="text" name="icone_card_2" style="display:none" :value="getFileName(card2.icon) || '<?php echo $empresa['icone_card_2']; ?>'">
       <input type="text" name="titulo_card_2" value="<?php echo $empresa['titulo_card_2'];?>">
       <input type="text" name="subtitulo_card_2" value="<?php echo $empresa['subtitulo_card_2'];?>">
     </div>
 
     <!-- Input 3 -->
     <div class="input">
-      <img :src="card3.icon" alt="" width="50">
+      <img :src="card3.icon ? 'assets/images/' + card3.icon : 'assets/images/<?php echo $empresa['icone_card_3']; ?>'"  alt="" width="50">
       <label>Ícone 3</label>
-      <button href="#" class="btn-icones" @click.prevent="openModal('card3')">selecionar ícone</button>
-      <input type="text" name="icone_card_3" v-model="card3.icon" style="display:none">
+      <div class="btn-icones" @click.prevent="openModal('card3')">selecionar ícone</div>
+      <input type="text" name="icone_card_3" style="display:none" :value="getFileName(card3.icon) || '<?php echo $empresa['icone_card_3']; ?>'">
       <input type="text" name="titulo_card_3" value="<?php echo $empresa['titulo_card_3'];?>">
       <input type="text" name="subtitulo_card_3" value="<?php echo $empresa['subtitulo_card_3'];?>">
     </div>
@@ -209,7 +255,7 @@ $empresa = $result->fetch_assoc();
           style="cursor:pointer; margin:5px"
         >
       </div>
-        <button @click="closeModal">Fechar</button>
+        <div class="fecha-modal" @click="closeModal">Fechar</div>
             </div>
           </div>
               <button type="submit" name="atualizar">

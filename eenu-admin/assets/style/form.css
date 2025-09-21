@@ -204,6 +204,23 @@
   text-align: center;
 }
 
+.form-area {
+  position: relative;
+}
+
+.main-slug {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  z-index: 450;
+  font-weight: 700;
+  color: var(--red);
+}
+
+.dark .main-slug {
+  color: var(--color-4);
+}
+
 .inputs-6 img {
   background-color: white;
   width: 50px;

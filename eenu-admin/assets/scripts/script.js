@@ -24,9 +24,21 @@ new Vue({
       "assets/images/icon-11.svg",
       "assets/images/icon-12.svg",
     ],
-    card1: { icon: "#", title: "", subtitle: "" },
-    card2: { icon: "#", title: "", subtitle: "" },
-    card3: { icon: "#", title: "", subtitle: "" },
+    card1: {
+      icon: "",
+      title: "",
+      subtitle: "",
+    },
+    card2: {
+      icon: "",
+      title: "",
+      subtitle: "",
+    },
+    card3: {
+      icon: "",
+      title: "",
+      subtitle: "",
+    },
     is976: window.innerWidth <= 976,
     currentPath: window.location.pathname.split("/").pop(),
     empresaSelecionada: {
@@ -83,6 +95,10 @@ new Vue({
   methods: {
     isPage(page) {
       return this.currentPath === page;
+    },
+    getFileName(path) {
+      if (!path) return "";
+      return path.split("/").pop();
     },
     slugify(text) {
       return text
@@ -161,7 +177,7 @@ new Vue({
     },
     selectIcon(icon) {
       if (this.currentCard && this[this.currentCard]) {
-        this[this.currentCard].icon = icon;
+        this[this.currentCard].icon = icon.split("/").pop();
       }
       this.closeModal();
     },
