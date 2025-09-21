@@ -37,14 +37,14 @@ $empresa = $result->fetch_assoc();
             <div class="main">
             <div class="form-area">
             <h1>Editar Site</h1>
-             <form method="POST" action="editar-empresa.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
+             <form method="POST" class="editar-empresa" action="editar-empresa.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
               <h3>informações gerais</h3>
-              <div class="input">
-                <img src="../empresa/assets/images/<?php echo $empresa['foto_cabecalho']; ?>" alt="cabeçalho imagem"/>
-                <label for="cabecalho">Imagem de Cabeçalho</label>
+              <div class="inputs inputs-1">
+              <div class="input input-image">
+                <label class="label-img" for="foto_cabecalho"><img src="../empresa/assets/images/<?php echo $empresa['foto_cabecalho']; ?>" alt="cabeçalho imagem"/></label>
                 <input type="file" name="foto_cabecalho">
               </div>
-              <div class="inputs">
+               <div class="inputs-column">
                 <div class="input">
                   <label for="titulo">Título</label>
                   <input type="text" name="titulo" value="<?php echo $empresa['titulo']; ?>">
@@ -58,7 +58,9 @@ $empresa = $result->fetch_assoc();
                   <input type="text" name="whatsapp" value="<?php echo $empresa['whatsapp']; ?>">
                 </div>
               </div>
+              </div>
               <br><h3>sobre a empresa</h3>
+              <div class="inputs inputs-2">
                 <div class="input">
                   <label for="sobre_1">Sobre a empresa</label>
                   <textarea name="sobre_1" id=""><?php echo $empresa['sobre_1'] ?? 'Mais informações sobre a empresa. Edite no painel.'; ?></textarea>
@@ -68,11 +70,12 @@ $empresa = $result->fetch_assoc();
                   <img src="../empresa/assets/images/<?php echo $empresa['foto_sobre']; ?>" alt="img-sobre"/>
                   <input type="file" name="foto_sobre" value="">
                 </div>
-                <div class="input">
-                  <label for="sobre_3">Sobre a equipe</label>
-                  <textarea name="sobre_3" id=""><?php echo $empresa['sobre_3'] ?? 'Sobre a nossa equipe. Edite no painel.'; ?></textarea>
                 </div>
-                <div class="inputs">
+              <div class="input input-100">
+                <label for="sobre_3">Sobre a equipe</label>
+                <textarea name="sobre_3" id=""><?php echo $empresa['sobre_3'] ?? 'Sobre a nossa equipe. Edite no painel.'; ?></textarea>
+              </div>
+              <div class="inputs inputs-3">
               <div class="input">
                 <label for="profissional_1_titulo">Profissional 1</label>
                 <img src="../empresa/assets/images/<?php echo $empresa['profissional_1_imagem']; ?>" alt="profissional"/>
@@ -96,7 +99,7 @@ $empresa = $result->fetch_assoc();
               </div>
               </div>
               <br><h3>galeria</h3>
-              <div class="inputs">
+              <div class="inputs inputs-4">
                 <div class="input">
                   <label for="foto_1">
                     <p>Foto 1</p>
@@ -134,7 +137,7 @@ $empresa = $result->fetch_assoc();
                 </div>
               </div>
               <br><h3>sessão de cards</h3>
-              <div class="inputs">
+              <div class="inputs inputs-5">
                 <div class="input">
                   <label for="">Card 1</label>
                   <input type="text" name="metodo_1_titulo" value="<?php echo $empresa['metodo_1_titulo']; ?>">
@@ -161,7 +164,7 @@ $empresa = $result->fetch_assoc();
                 <label for="sobre_2">Mais sobre a empresa</label>
                 <textarea name="sobre_2"><?php echo $empresa['sobre_2'] ?? 'Sobre a história da empresa. Edite no painel.'; ?></textarea>
               </div>
-              <div class="inputs">
+              <div class="inputs inputs-6">
     <!-- Input 1 -->
     <div class="input">
       <img :src="card1.icon" alt="" width="50">
