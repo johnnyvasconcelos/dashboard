@@ -47,6 +47,7 @@
   $slug = $dados['slug'];
   $fotoSobre = $dados['foto_sobre'];
   $fotoCabecalho = $dados['foto_cabecalho'];
+  $logo = $dados['logo'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -63,12 +64,12 @@
       <nav class="nav">
         <div class="container">
           <a href="./<?php echo $slug; ?>.php" class="logo">
-            <img src="./assets/images/logo.webp" alt="logo" />
+            <img src="./assets/images/<?php echo $logo; ?>" alt="logo" />
           </a>
           <ul class="menu">
             <header class="area-logo">
               <a href="./<?php echo $slug; ?>.php" class="logo-mob">
-                <img src="./assets/images/logo.webp" alt="logo" />
+                <img src="./assets/images/<?php echo $logo; ?>" alt="logo" />
               </a>
             </header>
             <li><a href="#">Início</a></li>
@@ -98,7 +99,7 @@
         <div class="background">
           <div class="container">
             <div class="text">
-              <h2>Mais Sobre <?php echo $titulo; ?></h2>
+              <h2>Mais Sobre <?php echo $nomeEmpresaFormatado; ?></h2>
               <p>
                 <?php echo $sobre1; ?>
               </p>
@@ -160,17 +161,17 @@
           </p>
           <div class="icones">
             <div class="icone">
-              <img src="./assets/images/<?php echo $iconeCard1; ?>" alt="heart" />
+              <img src="./assets/images/<?php echo $iconeCard1; ?>" alt="icone 1" />
               <span><?php echo $tituloCard1; ?></span>
               <p><?php echo $subtituloCard1; ?></p>
             </div>
             <div class="icone">
-              <img src="./assets/images/<?php echo $iconeCard2; ?>" alt="scissor" />
+              <img src="./assets/images/<?php echo $iconeCard2; ?>" alt="icone 2" />
               <span><?php echo $tituloCard2; ?></span>
               <p><?php echo $subtituloCard2; ?></p>
             </div>
             <div class="icone">
-              <img src="./assets/images/<?php echo $iconeCard3; ?>" alt="award" />
+              <img src="./assets/images/<?php echo $iconeCard3; ?>" alt="icone 3" />
               <span><?php echo $tituloCard3; ?></span>
               <p><?php echo $subtituloCard3; ?></p>
             </div>

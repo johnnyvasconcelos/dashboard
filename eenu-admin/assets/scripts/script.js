@@ -174,10 +174,24 @@ new Vue({
     },
     closeModal() {
       this.showModal = false;
+      this.currentCard = null;
     },
     selectIcon(icon) {
       if (this.currentCard && this[this.currentCard]) {
-        this[this.currentCard].icon = icon.split("/").pop();
+        const iconFileName = icon.split("/").pop();
+        this[this.currentCard].icon = iconFileName;
+
+        // Força a atualização do input hidden
+        this.$nextTick(() => {
+          const input = document.querySelector(
+            `input[name="icone_${this.currentCard}"]`
+          );
+          if (input) {
+            input.value = iconFileName;
+            // Dispara evento de mudança para garantir que o valor seja detectado
+            input.dispatchEvent(new Event("change"));
+          }
+        });
       }
       this.closeModal();
     },
