@@ -103,62 +103,56 @@
                   <li class="sub-menu-down">
                     <a href="javascript:void(0);">Salas</a>
                   </li>
-                  <li class="sub-menu-down">
-                    <a href="./studio-prisma/index.html">Empresa</a>
-                  </li>
                   <li class="sub-menu-down mega-menu">
-                    <a href="javascript:void(0);">Infraestrutura</a>
-                    <ul class="mega-menu" style="">
+                    <a href="./studio-prisma/index.html">Empresas</a>
+                     <style>
+                      .mega-menu > li {
+                        width: 50%!important;
+                      }
+                      .mega-menu .mega-menu {
+                       transform: translateX(200px);
+                      }
+                      </style>
+                    <ul class="mega-menu" style="max-width: 450px">
                       <li>
-                        <a href="javascript:void(0);">Serviços e Comodidades</a>
+                        <a href="javascript:void(0);">Torre A</a>
                         <ul>
                           <li>
-                            <a href="#">Recepção 24h</a>
+                            <a href="https://concrejato.com.br" target="_blank">Concrejato</a>
                           </li>
                           <li>
-                            <a href="#">Segurança e monitoramento</a>
+                            <a href="https://oneelevadores.com.br" target="_blank">Segurança e monitoramento</a>
                           </li>
                           <li>
-                            <a href="#"
-                              >Estacionamento
+                            <a href="https://satel-sa.com.br" target="_blank"
+                              >Satel
                               <span class="new-page">Novo</span></a
                             >
                           </li>
-                          <li><a href="#">Limpeza e manutenção</a></li>
+                          <li><a href="iqvia.com" target="_blank">IQVIA</a></li>
                         </ul>
                       </li>
                       <li>
-                        <a href="javascript:void(0);">Espaços Corporativos</a>
+                        <a href="javascript:void(0);">Torre B</a>
                         <ul class="two-col">
                           <li>
-                            <a href="#"
-                              >Salas Moduláveis
-                              <span class="new-page">20-200m²</span></a
+                            <a href="https://grupotimestop.com.br" target="_blank"
+                              >Grupo TimeStop</a
                             >
                           </li>
-                          <li><a href="#">Auditório empresarial</a></li>
-                          <li><a href="#">Salas de reunião</a></li>
-                          <li><a href="#">Lounge corporativo</a></li>
-                          <li><a href="#">Áreas de coworking</a></li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0);">Facilidades Extras</a>
-                        <ul>
-                          <li>
-                            <a href="#">Internet de alta velocidade</a>
-                          </li>
-                          <li>
-                            <a href="#">Restaurante / café no térreo</a>
-                          </li>
-                          <li><a href="#">Bicicletário e vestiários</a></li>
-                          <li>
-                            <a href="#">Acessibilidade</a>
-                          </li>
+                          <li><a href="https://criativapix.com" target="_blank">CriativaPix</a></li>
+                          <li><a href="https://ajdesenvolvimento.com.br">AJ Desenvolvimento</a></li>
+                          <li><a href="https://bulldigital.co" target="_blank">Bull Digital</a></li>
+                          <li><a href="https://dandrade.com.br" target="_blank">D’Andrade</a></li>
+                          <li><a href="https://pdgit.com.br" target="_blank">PDG IT</a></li>
+                          <li><a href="https://open-x.com.br" target="_blank">OpenX</a></li>
+                          <li><a href="https://zaionseguros.com.br" target="_blank">Zaion Seguros</a></li>
+                          <li><a href="https://alynemota.com.br" target="_blank">Alyne Mota</a></li>
                         </ul>
                       </li>
                     </ul>
                   </li>
+                  <li class="sub-menu-down mega-menu"><a href="javascript:void(0);">Infraestrutura</a></li>
                   <li><a href="#">Contato</a></li>
                   <li><a href="./eenu-admin/login.php">Login</a></li>
                 </ul>
@@ -200,18 +194,16 @@
           </div>
           <div class="m-b50 contact-text">
             <div class="dz-title">
-              <h4>About US</h4>
+              <h4>Sobre Nós</h4>
               <div class="dz-separator style-1 text-primary mb-0"></div>
             </div>
             <p>
-              Aliquam erat volutpat. Nunc erat massa, porttitor vel egestas sit
-              amet, tristique at massa. Donec posuere odio neque, in ultricies
-              lorem aliquet eu. Donec venenatis libero a nulla placerat egestas.
+              O Espaço Empresarial Nações Unidas reúne inovação, conforto e segurança em um ambiente corporativo planejado para atender diferentes tipos de negócios. Aqui, empresas encontram a estrutura ideal para crescer, se conectar e prosperar, com toda a infraestrutura necessária para apoiar a rotina empresarial.
             </p>
             <a href="#" class="btn btn-primary btn-sm btn-rounded">saiba mais</a>
           </div>
           <div class="dz-title">
-            <h4>Gallery</h4>
+            <h4>Galleria</h4>
             <div class="dz-separator style-1 text-primary mb-0"></div>
           </div>
           <div class="widget bg-white widget_gallery">
@@ -1039,15 +1031,15 @@
                       >
                         <div class="dz-media">
                           <a href="javascript:void(0);"
-                            ><img src="images/pic1.jpg" alt=""
+                            ><img src="images/time-2.webp" alt=""
                           /></a>
                         </div>
                         <div class="dz-content m-t20">
                           <h6 class="dz-position line text-primary">
-                            Engineer
+                            Empresária
                           </h6>
                           <h5 class="dz-name">
-                            <a href="javascript:void(0);">Andrey Carol</a>
+                            <a href="javascript:void(0);">Marina Alencar</a>
                           </h5>
                           <ul class="team-social d-flex">
                             <li>
@@ -1080,15 +1072,15 @@
                       >
                         <div class="dz-media">
                           <a href="javascript:void(0);"
-                            ><img src="images/pic2.jpg" alt=""
+                            ><img src="images/time-1.webp" alt=""
                           /></a>
                         </div>
                         <div class="dz-content m-t20">
                           <h6 class="dz-position line text-primary">
-                            Manager Effiect
+                            Lojista
                           </h6>
                           <h5 class="dz-name">
-                            <a href="javascript:void(0);">Phillip Schleifer</a>
+                            <a href="javascript:void(0);">Helena Duarte</a>
                           </h5>
                           <ul class="team-social d-flex">
                             <li>
@@ -1121,15 +1113,15 @@
                       >
                         <div class="dz-media">
                           <a href="javascript:void(0);"
-                            ><img src="images/usuario-2.png" alt=""
+                            ><img src="images/time-3.webp" alt=""
                           /></a>
                         </div>
                         <div class="dz-content m-t20">
                           <h6 class="dz-position line text-primary">
-                            CEO Factory
+                            Professor
                           </h6>
                           <h5 class="dz-name">
-                            <a href="javascript:void(0);">Luís Antônio</a>
+                            <a href="javascript:void(0);">Ricardo Menezes</a>
                           </h5>
                           <ul class="team-social d-flex">
                             <li>
@@ -1250,8 +1242,8 @@
                 data-aos-duration="1000"
                 data-aos-delay="400"
               >
-                <h5 class="text-primary sub-title">Blog Details</h5>
-                <h2 class="title">Read Our Latest Blog & News</h2>
+                <h5 class="text-primary sub-title">Nosso Blog</h5>
+                <h2 class="title">Leia Nossas Últimas Notícias</h2>
               </div>
               <div
                 class="col-lg-4 aos-item aos-init aos-animate text-end d-none d-lg-block"
@@ -1260,7 +1252,7 @@
                 data-aos-delay="600"
               >
                 <a href="#" class="btn btn-primary btn-rounded hover-icon">
-                  <span>View All Post</span>
+                  <span>Ver todos os posts</span>
                   <i class="fas fa-arrow-right"></i>
                 </a>
               </div>
@@ -1283,9 +1275,9 @@
                           <li class="post-author d-flex align-items-center">
                             <img src="images/pic1.png" alt="" /><span
                               class="text-dark m-l10 m-r5"
-                              >By</span
+                              >Por</span
                             >
-                            <span class="text-primary">Alex </span>
+                            <span class="text-primary">Christian </span>
                           </li>
                           <li class="post-comments">
                             <span class="m-r10">
@@ -1359,7 +1351,7 @@
                                   stroke-linejoin="round"
                                 ></path>
                               </svg>
-                              22 feb 2022
+                              22 Set 2022
                             </span>
                             <span>
                               <svg
@@ -1390,12 +1382,10 @@
                         </ul>
                       </div>
                       <h4 class="dz-title">
-                        <a href="#">How to grow trees from seeds?</a>
+                        <a href="#">O que torna um condomínio empresarial eficiente?</a>
                       </h4>
                       <p class="text">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting. Lorem Ipsum is simply dummy. Lorem Ipsum is
-                        simply dummy.
+                        Saiba quais são os principais diferenciais de infraestrutura e gestão que garantem mais tranquilidade para empresas e colaboradores.
                       </p>
                       <div class="read-more">
                         <a
@@ -1425,9 +1415,9 @@
                           <li class="post-author d-flex align-items-center">
                             <img src="images/pic2.png" alt="" /><span
                               class="text-dark m-l10 m-r5"
-                              >By</span
+                              >Por</span
                             >
-                            <span class="text-primary">Alex </span>
+                            <span class="text-primary">Christian </span>
                           </li>
                           <li class="post-comments">
                             <span class="m-r10">
@@ -1501,7 +1491,7 @@
                                   stroke-linejoin="round"
                                 ></path>
                               </svg>
-                              22 feb 2022
+                              22 Set 2022
                             </span>
                             <span>
                               <svg
@@ -1532,12 +1522,10 @@
                         </ul>
                       </div>
                       <h4 class="dz-title">
-                        <a href="#">A New Way To Find Architecte?</a>
+                        <a href="#">Sustentabilidade nos Escritórios: Práticas que Fazem Diferença</a>
                       </h4>
                       <p class="text">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting. Lorem Ipsum is simply dummy. Lorem Ipsum is
-                        simply dummy.
+                        Do uso consciente de energia à coleta seletiva, pequenas ações no dia a dia de empresas contribuem para reduzir...
                       </p>
                       <div class="read-more">
                         <a
@@ -1567,9 +1555,9 @@
                           <li class="post-author d-flex align-items-center">
                             <img src="images/pic1.png" alt="" /><span
                               class="text-dark m-l10 m-r5"
-                              >By</span
+                              >Por</span
                             >
-                            <span class="text-primary">Alex </span>
+                            <span class="text-primary">Christian </span>
                           </li>
                           <li class="post-comments">
                             <span class="m-r10">
@@ -1643,7 +1631,7 @@
                                   stroke-linejoin="round"
                                 ></path>
                               </svg>
-                              22 feb 2022
+                              22 Set 2022
                             </span>
                             <span>
                               <svg
@@ -1674,12 +1662,10 @@
                         </ul>
                       </div>
                       <h4 class="dz-title">
-                        <a href="#">Have You Got a Rubbish?</a>
+                        <a href="#">Como Melhorar o Networking no Ambiente Empresarial</a>
                       </h4>
                       <p class="text">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting. Lorem Ipsum is simply dummy. Lorem Ipsum is
-                        simply dummy.
+                        Um espaço de trabalho compartilhado pode ser o ponto de partida para novas parcerias. Descubra estratégias para aproveitar ao...
                       </p>
                       <div class="read-more">
                         <a
@@ -1710,21 +1696,23 @@
                 data-aos-delay="600"
               >
                 <div class="widget widget_about">
-                  <h4 class="footer-title">CONTACT</h4>
+                  <h4 class="footer-title">CONTATO</h4>
                   <div class="widget_getintuch">
                     <ul>
                       <li>
                         <i class="las la-map-marker-alt"></i>
-                        1247/Plot No. 39, 15th Phase, Colony, Kkatpally,
-                        Hyderabad
+                        Rua Verbo Divino, 2001
+Chácara Santo Antônio
+(Esquina com a Marginal Pinheiros)
+São Paulo - CEP: 04719-002
                       </li>
                       <li>
                         <i class="las la-phone-volume"></i>
-                        +91 987-654-3210 +91 123-456-7890
+                        (11) 5183-9899 &nbsp;&nbsp;(11) 5183-9899
                       </li>
                       <li>
-                        <i class="las la-map-marker-alt"></i>
-                        info@example.com info@example.com
+                        <i class="las la-envelope"></i>
+                        contato@eenu.com.br atendimento@eenu.com.br
                       </li>
                     </ul>
                   </div>
@@ -1737,13 +1725,13 @@
                 data-aos-delay="400"
               >
                 <div class="widget widget_services">
-                  <h4 class="footer-title">OUR LINKS</h4>
+                  <h4 class="footer-title">MENU</h4>
                   <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Empresas</a></li>
+                    <li><a href="#">Time</a></li>
+                    <li><a href="#">Blog</a></li>
                   </ul>
                 </div>
               </div>
@@ -1754,15 +1742,11 @@
                 data-aos-delay="400"
               >
                 <div class="widget widget_services">
-                  <h4 class="footer-title">OUR SERVICES</h4>
+                  <h4 class="footer-title">INSTITUCIONAL</h4>
                   <ul>
-                    <li>
-                      <a href="javascript:void(0);">Strategy & Research</a>
-                    </li>
-                    <li><a href="javascript:void(0);">Web Development</a></li>
-                    <li><a href="javascript:void(0);">Web Solution</a></li>
-                    <li><a href="javascript:void(0);">Digital Marketing</a></li>
-                    <li><a href="javascript:void(0);">App Design</a></li>
+                    <li><a href="javascript:void(0);">Termos & Condições</a></li>
+                    <li><a href="javascript:void(0);">Política de Privacidade</a></li>
+                    <li><a href="javascript:void(0);">Contato</a></li>
                   </ul>
                 </div>
               </div>
@@ -1773,13 +1757,11 @@
                 data-aos-delay="400"
               >
                 <div class="widget widget_services">
-                  <h4 class="footer-title">OTHER LINKS</h4>
+                  <h4 class="footer-title">OUTRO</h4>
                   <ul>
                     <li><a href="javascript:void(0);">FAQ</a></li>
-                    <li><a href="javascript:void(0);">Portfolio</a></li>
-                    <li><a href="javascript:void(0);">Privacy Policy</a></li>
-                    <li><a href="javascript:void(0);">Terms & Condition</a></li>
-                    <li><a href="javascript:void(0);">Support</a></li>
+                    <li><a href="javascript:void(0);">Cases de Sucesso</a></li>
+                    <li><a href="javascript:void(0);">Suporte</a></li>
                   </ul>
                 </div>
               </div>
@@ -1794,16 +1776,16 @@
                 <span class="copyright-text"
                   >Copyright © <span class="current-year">2024</span>
                   <a href="#" class="text-primary" target="_blank"
-                    >DexignZone</a
+                    >EENU</a
                   >
-                  All rights reserved.</span
+                  Todos os Direitos Reservados.</span
                 >
               </div>
               <div class="col-md-6 text-center text-md-end">
                 <ul class="footer-link d-inline-block">
-                  <li><a href="javascript:void(0);">About</a></li>
-                  <li><a href="javascript:void(0);">Help Desk</a></li>
-                  <li><a href="javascript:void(0);">Privacy Policy</a></li>
+                  <li><a href="javascript:void(0);">Sobre</a></li>
+                  <li><a href="javascript:void(0);">Contato</a></li>
+                  <li><a href="javascript:void(0);">Privacidade</a></li>
                 </ul>
               </div>
             </div>
